@@ -1,0 +1,23 @@
+html, body, .caipl-background {
+    height: 100%;
+}
+
+.carousel-item img {
+	height: 460.8px;
+}
+
+.caipl-background {
+	width: 100%;
+	height: 350px;
+	background-size: cover;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#background-slider-1 {
+	background-image: url(../images/slider/2.png);
+    background-blend-mode: darken;
+    background-color: #000000ad;
+}
+
