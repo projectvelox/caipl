@@ -17,11 +17,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-xs-12 col-md-6">
-				<h2>Vision</h2>
+				<h2 class="caipl-header text-dark">Vision</h2>
 				<p>Center of Academic Excellence Delivering Quality Service to all</p>
 			</div>	
 			<div class="col-xs-12 col-md-6">
-				<h2>Mission</h2>
+				<h2 class="caipl-header text-dark">Mission</h2>
 				<p>Capiz State University is committed to provide advance knowledge and innovation; develop skills, talents and values; undertake relevant research, development and extension services; promote entrepreneurship and environmental consciousness; and enhance industry collaboration and linkages with partner agencies.</p>
 			</div>	
 		</div>

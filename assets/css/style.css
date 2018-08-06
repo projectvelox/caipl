@@ -4,6 +4,12 @@ html, body, .caipl-background {
 
 .carousel-item img {
 	height: 460.8px;
+	width: 100%;
+}
+
+.caipl-header {
+	border-bottom: 1px solid #f3f3f3;
+    padding-bottom: 10px;
 }
 
 .caipl-background {
