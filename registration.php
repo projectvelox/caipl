@@ -14,7 +14,7 @@
   <div class="container mt-5">
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <h2><a class="text-dark" href="index.php"><i class="material-icons ">keyboard_backspace</i></a> Account Registration</h2>
+        <h2><a class="text-dark" href="index.php"><i class="material-icons">keyboard_backspace</i></a> Account Registration</h2>
         <p>Sign up for your very own account</p>
         <form action="/action_page.php">
           <div class="form-group">
@@ -79,7 +79,7 @@
         });
 
         $('#student-registered').html(data['username']);
-        
+
         $.ajax({type:"POST",url:"config/api.php",
           data: {
             studentid:data['studentid'],
