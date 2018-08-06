@@ -11,7 +11,7 @@
 	<!-- Background image -->
 	<div class="caipl-background mb-3" id="background-slider-1">
 		<h1 class="text-white">Computer Aided Instruction for Philippine Literature</h1>
-		<p></p>
+		<p class="text-white">Changing the standards of education and organizational training</p>
 	</div>
 	
 	<div class="container">
