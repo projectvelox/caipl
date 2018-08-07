@@ -9,7 +9,7 @@
 		$middlename = $_POST['middlename'];
 		$lastname = $_POST['lastname'];
 
-		$sql = "INSERT INTO accounts(idnumber, username, password, firstname, middlename, lastname) VALUES ('$studentid', '$username', '$password', '$firstname', '$middlename', '$lastname')";
+		$sql = "INSERT INTO accounts(idnumber, username, password, firstname, middlename, lastname, typeofaccount) VALUES ('$studentid', '$username', '$password', '$firstname', '$middlename', '$lastname', '1')";
 		$result = mysqli_query($con,$sql);
 
         header('Content-Type: application/json');

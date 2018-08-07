@@ -11,7 +11,7 @@
   <?php include 'view/partials/navbar.php'?>      
   
   <div class="container mt-5">
-    <h2>Account Management</h2><hr>
+    <h2><a class="text-dark" href="admin-dashboard.php"><i class="material-icons">keyboard_backspace</i></a> Account Management</h2><hr>
     <div class="row">
 
     </div>
