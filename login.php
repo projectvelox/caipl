@@ -57,9 +57,7 @@
 
                 <!-- Submit -->
                 <button type="submit"
-                        class="btn btn-dark"
-                        data-toggle="modal"
-                        data-target="#modal-login">
+                        class="btn btn-dark">
                     Login to account
                 </button>
             </form>

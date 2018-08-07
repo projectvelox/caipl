@@ -13,4 +13,13 @@
 	<script src="assets/js/bootstrap.min.js"></script>
 	<script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap-dialogs.js"></script>
+    <script type="text/javascript">
+    	var appDialog = new BootstrapDialog({
+	        preloaderClass: 'bg-dark',
+	        buttonClass: 'btn-primary',
+	        dialogTitleTag: 'h4',
+	        dialogSize: '',
+	        animation: true
+	    });
+    </script>
 </head>

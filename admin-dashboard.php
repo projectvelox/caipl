@@ -5,13 +5,11 @@
 <?php include 'view/partials/header.php'?>
 
 <body>
-  <?php include 'view/partials/modal-login.php'?>  
-
   <!-- Navbar -->
   <?php include 'view/partials/navbar.php'?>      
   
   <div class="container mt-5">
-    <h2>Admin Dashboard</h2><hr>
+    <h2>Admin Dashboard - Welcome <?php echo $_SESSION['account']['firstname'] ?></h2><hr>
     <div class="row">
       <div class="col-xs-6 col-md-2 caipl-dashboard-icons">
         <a href="account-management.php" class="text-dark">

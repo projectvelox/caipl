@@ -11,8 +11,9 @@
 	  	</tr>
 	  	<?php
 	  		$i=0;
+	  		$account = $_SESSION['account']['username'];
 			$con = mysqli_connect("localhost","root","","caipl");
-			$result = mysqli_query($con,"SELECT * FROM account_listing");
+			$result = mysqli_query($con,"SELECT * FROM account_listing where username != '$account' order by account_type");
 			while($row = mysqli_fetch_array($result))
 			{
 				$i++;

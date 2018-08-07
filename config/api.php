@@ -58,7 +58,25 @@
             else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
             break;
 
+
+        case 'register-account':
+            $studentid = $_POST['studentid'];
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+            $firstname = $_POST['firstname'];
+            $middlename = $_POST['middlename'];
+            $lastname = $_POST['lastname'];
+            $typeofaccount = $_POST['typeofaccount'];
+
+            $sql = "INSERT INTO accounts(idnumber, username, password, firstname, middlename, lastname, typeofaccount) VALUES ('$studentid', '$username', '$password', '$firstname', '$middlename', '$lastname', '$typeofaccount')";
+            $result = mysqli_query($con,$sql);
+
+            if($result) echo json_encode(['message' => 'Successfully created your account <b>'.$_POST['username'].'</b>']);
+            else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
+            break;
+        
         // Action Not Found
+
         default:
             echo json_encode(['error' => ['ACTION_NOT_FOUND', 'Action not found.']]);
             break;
