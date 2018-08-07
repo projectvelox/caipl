@@ -5,71 +5,136 @@
 <?php include 'view/partials/header.php'?>
 
 <body>
-  <?php 
-    include 'view/partials/modal-notification.php';
-    include 'view/partials/modal-registration.php'; 
-    include 'view/partials/navbar.php';
-  ?>      
-  
-  <div class="container mt-5">
+<?php
+include 'view/partials/modal-notification.php';
+include 'view/partials/modal-registration.php';
+include 'view/partials/navbar.php';
+?>
+
+<div class="container mt-5">
     <div class="row">
-      <div class="col-xs-12 col-md-6">
-        <h2><a class="text-dark" href="index.php"><i class="material-icons">keyboard_backspace</i></a> Account Registration</h2>
-        <p>Sign up for your very own account</p>
-        <form action="/action_page.php">
-          <div class="form-group">
-            <input type="text" class="form-control" name="studentid" placeholder="Enter your student id">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="username" placeholder="Enter your username">
-          </div>
-          <div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Enter your password">
-          </div><hr>
-          <div class="form-group">
-            <input type="text" class="form-control" name="firstname" placeholder="Enter your first name">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="middlename"  placeholder="Enter your middle name">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="lastname" placeholder="Enter your last name">
-          </div>
-          <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#modal-registration">Register account</button>
-        </form>
-        <p id="result"></p>
-      </div>
-      <div class="col-xs-12 col-md-6">
-        <?php include 'view/partials/carousel-registration.php' ?>
-      </div>
+        <div class="col-xs-12 col-md-6">
+
+            <!-- Title -->
+            <h2>
+                <a class="text-dark" href="index.php">
+                    <i class="material-icons">keyboard_backspace</i>
+                </a>
+                <span>Account Registration</span>
+            </h2>
+
+            <!-- Subtitle -->
+            <p>Sign up for your very own account</p>
+
+            <!-- Registration Form -->
+            <form id="RegistrationForm">
+                <!-- Student ID -->
+                <div class="form-group">
+                    <input type="text" class="form-control"
+                           required="required"
+                           name="studentid"
+                           placeholder="Enter your student id">
+                </div>
+
+                <!-- Username -->
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control"
+                           required="required"
+                           name="username"
+                           placeholder="Enter your username">
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <input type="password"
+                           class="form-control"
+                           required="required"
+                           name="password"
+                           placeholder="Enter your password">
+                </div><hr>
+
+                <!-- First Name -->
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control"
+                           required="required"
+                           name="firstname"
+                           placeholder="Enter your first name">
+                </div>
+
+                <!-- Middle Name -->
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control"
+                           name="middlename"
+                           placeholder="Enter your middle name">
+                </div>
+
+                <!-- Last Name -->
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control"
+                           name="lastname"
+                           placeholder="Enter your last name">
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn btn-dark">Register account</button>
+            </form>
+
+
+
+            <p id="result"></p>
+        </div>
+        <div class="col-xs-12 col-md-6">
+            <?php include 'view/partials/carousel-registration.php' ?>
+        </div>
     </div>
-  </div>
-  <script type="text/javascript">
-    $('.carousel').carousel();
-    $(document).on("click", ".trigger-registration", function() { 
-        var formdata = $('form').serializeArray();
-        var data = {};
-        $(formdata ).each(function(index, obj){
-            data[obj.name] = obj.value;
+</div>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var Dialog = new BootstrapDialog({
+            buttonClass: 'btn-primary'
         });
 
-        $('#student-registered').html(data['username']);
+        // Init Carousel
+        $('.carousel').carousel();
 
-        $.ajax({type:"POST",url:"config/api.php",
-          data: {
-            studentid:data['studentid'],
-            username:data['username'],
-            password:data['password'],
-            firstname:data['firstname'],
-            middlename:data['middlename'],
-            lastname:data['lastname'],
-            action:"create-account"
-          },
-          }).then(function(data) {
-            $("#modal-registration").modal("hide");
-            $("#modal-success").modal("show");
+
+        // Submit Registration Form
+        $('#RegistrationForm').on('submit', function (e) {
+            e.preventDefault();
+            var serialized_array = $(this).serializeArray();
+            var data = {
+                action: 'create-account'
+            };
+            for(var i = 0; i < serialized_array.length; i++) {
+                var item = serialized_array[i];
+                data[item.name] = item.value;
+            }
+            Dialog.confirm('Are you sure?', 'Are you sure you want to register this account?', function (yes) {
+                if(yes) {
+                    var preloader = new Dialog.preloader('Registering');
+                    $.ajax({
+                        type: 'POST',
+                        url: 'config/api.php',
+                        data: data
+                    }).then(function(data) {
+                        if(data.error) Dialog.alert('Registration Error: ' + data.error[0], data.error[1]);
+                        else Dialog.alert('Registration Success', data.message);
+                    }).catch(function (error) {
+                        Dialog.alert('Registration Error', error.statusText || 'Server Error');
+                    }).always(function () {
+                        preloader.destroy();
+                    });
+                }
+            });
         });
     });
-  </script>
+</script>
 </body>
 </html>
