@@ -16,6 +16,7 @@
     <p>Below are the list of questions</p><hr>
     
     <?php include "view/partials/table-quizzes.php" ?>
+    
   </div>
   <script type="text/javascript">
     $('.carousel').carousel();
