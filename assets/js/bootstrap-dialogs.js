@@ -126,7 +126,7 @@ function BootstrapDialog(options) {
         $(component.no_button)
             .attr('type', 'button')
             .attr('class', 'btn btn-default')
-            .html('NO')
+            .html('No')
             .on('click', function () {
                 confirmResult = false;
                 $(myModal.modal).modal('hide');
@@ -134,7 +134,7 @@ function BootstrapDialog(options) {
         $(component.yes_button)
             .attr('type', 'button')
             .attr('class', 'btn ' + myOptions.buttonClass)
-            .html('YES')
+            .html('Yes')
             .on('click', function () {
                 confirmResult = true;
                 $(myModal.modal).modal('hide');

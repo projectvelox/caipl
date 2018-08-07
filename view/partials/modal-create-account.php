@@ -17,6 +17,7 @@
                 <input type="text"
                        class="form-control"
                        name="username"
+                       required="required"
                        placeholder="Enter your username">
             </div>
 
@@ -25,6 +26,7 @@
                 <input type="password"
                        class="form-control"
                        name="password"
+                       required="required"
                        placeholder="Enter your password">
             </div>
 
@@ -41,6 +43,7 @@
                 <input type="text"
                        class="form-control"
                        name="firstname"
+                       required="required"
                        placeholder="Enter your firstname">
             </div>
 
@@ -57,11 +60,12 @@
                 <input type="text"
                        class="form-control"
                        name="lastname"
+                       required="required"
                        placeholder="Enter your lastname">
             </div>
 
             <div class="form-group">
-              <select class="form-control typeofaccount" name="typeofaccount">
+              <select class="form-control typeofaccount" name="typeofaccount" required="required">
                 <option selected disabled>Choose an option</option>
                 <option value="1">Student</option>
                 <option value="2">Admin</option>

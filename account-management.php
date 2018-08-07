@@ -49,6 +49,7 @@
 	                var item = serialized_array[i];
 	                data[item.name] = item.value;
 	            }
+	            $('#modal-create-account').modal('hide');
 	            appDialog.confirm('Are you sure?', 'Are you sure you want to register this account?', function (yes) {
 	                if(yes) {
 	                    var preloader = new appDialog.preloader('Registering');

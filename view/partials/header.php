@@ -16,7 +16,7 @@
     <script type="text/javascript">
     	var appDialog = new BootstrapDialog({
 	        preloaderClass: 'bg-dark',
-	        buttonClass: 'btn-primary',
+	        buttonClass: 'btn-dark',
 	        dialogTitleTag: 'h4',
 	        dialogSize: '',
 	        animation: true
