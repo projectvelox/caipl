@@ -7,6 +7,7 @@
 	  		<th>Middle Name</th>
 	  		<th>Last Name</th>
 	  		<th>Account Type</th>
+	  		<th>Action</th>
 	  	</tr>
 	  	<?php
 	  		$i=0;
@@ -17,11 +18,20 @@
 				$i++;
 				echo "<tr>";
 				echo "<td>" . $i . " </td>";
-				echo "<td>" . $row['username'] . " </td>";
+				echo "<td><strong>" . $row['username'] . "<strong></td>";
 				echo "<td>" . $row['firstname'] . "</td>";		
 				echo "<td>" . $row['middlename'] . "</td>";
 				echo "<td>" . $row['lastname'] . "</td>";
 				echo "<td>" . $row['account_type'] . "</td>";
+				echo 
+				"<td>
+					<button class='btn btn-dark text-white caipl-btn'>
+						<i class='material-icons'>edit</i>
+					</button>
+					<button class='btn btn-danger text-white caipl-btn'>
+						<i class='material-icons'>delete</i>
+					</button>
+				</td>";
 				echo "</tr>";
 			}
 			mysqli_close($con);

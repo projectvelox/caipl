@@ -13,6 +13,11 @@ html, body, .caipl-background {
 	margin: 10px 0px;
 }
 
+.caipl-btn { 
+	line-height: 1px; 
+	padding: 2px;
+}
+
 .caipl-dashboard-icons img {
 	height: 100px;
 	padding: 10px;
