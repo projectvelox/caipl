@@ -19,6 +19,8 @@ html, body, .caipl-background {
 	margin-bottom: 5px;
 }
 
+.caipl-dashboard-icons img:hover { transform: scale(1.1); }
+
 .caipl-header {
 	border-bottom: 1px solid #f3f3f3;
     padding-bottom: 10px;

@@ -11,6 +11,7 @@
   <?php include 'view/partials/navbar.php'?>      
   
   <div class="container mt-5">
+    <h2>Admin Dashboard</h2><hr>
     <div class="row">
       <div class="col-xs-6 col-md-3 caipl-dashboard-icons">
         <img src="assets/images/icons/account-management.png">
