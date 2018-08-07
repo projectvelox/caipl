@@ -7,10 +7,19 @@ html, body, .caipl-background {
 	width: 100%;
 }
 
+.breadcrumb { border-radius: 0px; }
+
+.caipl-link a { text-decoration: none; color: #fff}
+
 .caipl-dashboard-icons {
 	text-align: center;
 	padding: 10px;
 	margin: 10px 0px;
+}
+
+.caipl-btn { 
+	line-height: 1px; 
+	padding: 2px;
 }
 
 .caipl-dashboard-icons img {
