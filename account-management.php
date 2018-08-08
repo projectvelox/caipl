@@ -59,7 +59,14 @@
 	                        data: data
 	                    }).then(function(data) {
 	                        if(data.error) appDialog.alert('Registration Error: ' + data.error[0], data.error[1]);
-	                        else appDialog.alert('Registration Success', data.message);
+	                        else appDialog.alert('Registration Success', data.message, 
+	                        	function(OK) {
+	                        		if(OK){
+	                        			$("#accountListing").ajax.reload();
+	                        		}
+	                        	}
+	                        );
+
 	                    }).catch(function (error) {
 	                        appDialog.alert('Registration Error', error.statusText || 'Server Error');
 	                    }).always(function () {
