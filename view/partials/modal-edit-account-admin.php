@@ -16,24 +16,24 @@
 
             <!-- Username -->
             <div class="form-group">
-                <input type="text"
+                <input type="hidden"
                        class="form-control"
                        name="username"
                        required="required">
-
             </div>
 
             <!-- Password -->
-            <div class="form-group">
+            <div class="form-group" style="margin-top: -20px;">
+                <label>Password</label>
                 <input type="password"
                        class="form-control"
                        name="password"
                        required="required">
-
             </div>
 
             <!-- First Name -->
             <div class="form-group">
+                <label>First Name</label>
                 <input type="text"
                        class="form-control"
                        name="firstname"
@@ -42,18 +42,20 @@
 
             <!-- Middle Name -->
             <div class="form-group">
+                <label>Middle Name</label>
                 <input type="text"
                        class="form-control"
                        name="middlename">
             </div>
 
             <!-- Last Name -->
-            <div class="form-group">
+            <div class="form-group" style="margin-bottom: 30px;">
+                <label>Last Name</label>
                 <input type="text"
                        class="form-control"
                        name="lastname">
             </div>
-
+            
             <button type="submit" class="btn btn-dark">Edit</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </form>

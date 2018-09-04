@@ -32,6 +32,10 @@
 	<script type="text/javascript">
 		$(document).ready(function () {
 			
+			function RefreshTable() {
+		       $("#accountListing").load("account-management.php #accountListing");
+		    }
+
 			$(document).on("click", "#editProfileModal", function() { 
 				var sessionUsername = $(this).data('username');
 				var sessionFirstname = $(this).data('firstname');  
@@ -44,6 +48,35 @@
 	        	$('input[name=middlename]').val(sessionMiddlename);
 	        	$('input[name=lastname]').val(sessionLastname);
 	        	$('input[name=password]').val(sessionPassword);
+			});
+
+			$(document).on("click", "#deleteProfile", function() { 
+				var username = $(this).data('username');
+
+				appDialog.confirm('Are you sure?', 'Are you sure you want to delete this account?',
+				 	function (yes) {
+				 		if(yes) {
+				 			var preloader = new appDialog.preloader('Deleting');
+		                    $.ajax({
+		                        type: 'POST',
+		                        url: 'config/api.php',
+		                        data: {
+		                        	username: username,
+		                        	action: "delete-account"
+		                        }
+		                    }).then(function(data) {
+		                        if(data.error) appDialog.alert('Deletion Error: ' + data.error[0], data.error[1]);
+		                        else appDialog.alert('Deletion Success', data.message, 
+		                        	function(OK) { RefreshTable() }
+		                        );
+
+		                    }).catch(function (error) {
+		                        appDialog.alert('Deletion Error', error.statusText || 'Server Error');
+		                    }).always(function () {
+		                        preloader.destroy();
+		                    });
+					 	}
+				 	});
 			});
 
 			$(".typeofaccount").change(function() {
@@ -77,11 +110,7 @@
 	                    }).then(function(data) {
 	                        if(data.error) appDialog.alert('Registration Error: ' + data.error[0], data.error[1]);
 	                        else appDialog.alert('Registration Success', data.message, 
-	                        	function(OK) {
-	                        		if(OK){
-	                        			$("#accountListing").ajax.reload();
-	                        		}
-	                        	}
+	                        	function(OK) { RefreshTable() }
 	                        );
 
 	                    }).catch(function (error) {
@@ -92,10 +121,6 @@
 	                }
 	            });
 	        });
-
-	        function RefreshTable() {
-		       $("#accountListing").load("account-management.php #accountListing");
-		    }
 
 			$('#editForm').on('submit', function (e) {
 

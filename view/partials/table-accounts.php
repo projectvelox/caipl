@@ -29,7 +29,7 @@
 					<button class='btn btn-dark text-white caipl-btn' data-toggle='modal' data-target='#modal-edit-account' id='editProfileModal' data-username='".$row['username']."'' data-firstname='".$row['firstname']."' data-middlename='".$row['middlename']."' data-lastname='".$row['lastname']."' data-password='".$row['password']."'>
 						<i class='material-icons'>edit</i>
 					</button>
-					<button class='btn btn-danger text-white caipl-btn'>
+					<button class='btn btn-danger text-white caipl-btn' id='deleteProfile' data-username='".$row['username']."'>
 						<i class='material-icons'>delete</i>
 					</button>
 				</td>";

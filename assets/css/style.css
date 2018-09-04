@@ -56,3 +56,6 @@ html, body, .caipl-background {
     background-color: #000000ad;
 }
 
+#editForm .form-group label {
+	font-weight: bold;
+}

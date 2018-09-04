@@ -93,6 +93,17 @@
             if($result) echo json_encode(['message' => 'Successfully updated your account details <b>'.$_POST['username'].'</b>']);
             else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
             break;
+
+        case 'delete-account':
+            $username = $_POST['username'];
+
+            $sql = "DELETE FROM accounts
+                    WHERE username='$username'";
+            $result = mysqli_query($con,$sql);
+
+            if($result) echo json_encode(['message' => 'Successfully deleted the account <b>'.$_POST['username'].'</b>']);
+            else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
+            break;
         
         // Action Not Found
 
