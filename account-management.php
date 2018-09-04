@@ -5,6 +5,9 @@
 <?php include 'view/partials/header.php'?>
 
 <body>
+  <!-- Modal Edit Account -->
+  <?php include 'view/partials/modal-edit-account-admin.php'?>  
+
   <!-- Modal Create Account -->
   <?php include 'view/partials/modal-create-account.php'?>  
 
@@ -28,7 +31,21 @@
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function () {
-		
+			
+			$(document).on("click", "#editProfileModal", function() { 
+				var sessionUsername = $(this).data('username');
+				var sessionFirstname = $(this).data('firstname');  
+				var sessionMiddlename = $(this).data('middlename');  
+				var sessionLastname = $(this).data('lastname');  
+				var sessionPassword = $(this).data('password');  
+
+	        	$('input[name=username]').val(sessionUsername);
+	        	$('input[name=firstname]').val(sessionFirstname);
+	        	$('input[name=middlename]').val(sessionMiddlename);
+	        	$('input[name=lastname]').val(sessionLastname);
+	        	$('input[name=password]').val(sessionPassword);
+			});
+
 			$(".typeofaccount").change(function() {
 	            var type = $('.typeofaccount').find(":selected").val();
 	            if(type=="2"){
@@ -69,6 +86,44 @@
 
 	                    }).catch(function (error) {
 	                        appDialog.alert('Registration Error', error.statusText || 'Server Error');
+	                    }).always(function () {
+	                        preloader.destroy();
+	                    });
+	                }
+	            });
+	        });
+
+	        function RefreshTable() {
+		       $("#accountListing").load("account-management.php #accountListing");
+		    }
+
+			$('#editForm').on('submit', function (e) {
+
+				e.preventDefault();
+	            var serialized_array = $(this).serializeArray();
+	            var data = {
+	                action: 'edit-account'
+	            };
+	            for(var i = 0; i < serialized_array.length; i++) {
+	                var item = serialized_array[i];
+	                data[item.name] = item.value;
+	            }
+	            $('#modal-edit-account').modal('hide');
+	            appDialog.confirm('Are you sure?', 'Are you sure you want to update the information of this account?', function (yes) {
+	                if(yes) {
+	                    var preloader = new appDialog.preloader('Updating');
+	                    $.ajax({
+	                        type: 'POST',
+	                        url: 'config/api.php',
+	                        data: data
+	                    }).then(function(data) {
+	                        if(data.error) appDialog.alert('Update Error: ' + data.error[0], data.error[1]);
+	                        else appDialog.alert('Update Success', data.message, 
+	                        	function(OK) { RefreshTable() }
+	                        );
+
+	                    }).catch(function (error) {
+	                        appDialog.alert('Update Error', error.statusText || 'Server Error');
 	                    }).always(function () {
 	                        preloader.destroy();
 	                    });

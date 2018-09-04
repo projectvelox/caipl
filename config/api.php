@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    if(empty(session_id()))session_start();
 	include 'config-file.php';
 
 
@@ -72,6 +72,25 @@
             $result = mysqli_query($con,$sql);
 
             if($result) echo json_encode(['message' => 'Successfully created your account <b>'.$_POST['username'].'</b>']);
+            else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
+            break;
+
+        case 'edit-account':
+            $password = $_POST['password'];
+            $firstname = $_POST['firstname'];
+            $middlename = $_POST['middlename'];
+            $lastname = $_POST['lastname'];
+            $username = $_POST['username'];
+
+            $sql = "UPDATE accounts
+                    SET firstname='$firstname', 
+                        middlename='$middlename', 
+                        lastname='$lastname', 
+                        password='$password' 
+                    WHERE username='$username'";
+            $result = mysqli_query($con,$sql);
+
+            if($result) echo json_encode(['message' => 'Successfully updated your account details <b>'.$_POST['username'].'</b>']);
             else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
             break;
         
