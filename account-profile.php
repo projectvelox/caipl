@@ -13,7 +13,16 @@
 
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb bg-dark">
-	    <li class="breadcrumb-item caipl-link"><a href="user-dashboard.php">User Dashboard</a></li>
+	  	<?php
+	  		echo($_SESSION['account']['typeofaccount']);
+	  		if($_SESSION['account']['typeofaccount']==1) {
+	  			echo '<li class="breadcrumb-item caipl-link"><a href="user-dashboard.php">User Dashboard</a></li>';
+	  		}
+	  		else {
+	  			echo '<li class="breadcrumb-item caipl-link"><a href="admin-dashboard.php">Admin Dashboard</a></li>';
+	  		}
+	  	?>
+	    
 	    <li class="breadcrumb-item active text-warning" aria-current="page">Profile</li>
 	  </ol>
 	</nav>
