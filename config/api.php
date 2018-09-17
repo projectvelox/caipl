@@ -104,6 +104,41 @@
             if($result) echo json_encode(['message' => 'Successfully deleted the account <b>'.$_POST['username'].'</b>']);
             else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
             break;
+
+        case 'create-chapter':
+            $chaptername = $_POST['chaptername'];
+            $chapterdescription = $_POST['chapterdescription'];
+
+            $sql = "INSERT INTO chapter(chapter_name, chapter_description) VALUES ('$chaptername', '$chapterdescription')";
+            $result = mysqli_query($con,$sql);
+
+            if($result) echo json_encode(['message' => 'Successfully added chapter <b>'.$_POST['username'].'</b>']);
+            else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
+            break;
+
+        case 'create-lesson':
+            $chapterid = $_POST['lessonchaptername'];
+            $lessonname = $_POST['lessonname'];
+            $lessondescription = $_POST['lessondescription'];
+
+            $sql = "INSERT INTO lesson(chapter_id, lesson_name, lesson_description) VALUES ('$chapterid', '$lessonname', '$lessondescription')";
+            $result = mysqli_query($con,$sql);
+
+            if($result) echo json_encode(['message' => 'Successfully added lesson <b>'.$_POST['username'].'</b>']);
+            else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
+            break;
+
+        case 'check-quiz':
+            // $chapterid = $_POST['lessonchaptername'];
+            // $lessonname = $_POST['lessonname'];
+            // $lessondescription = $_POST['lessondescription'];
+
+            // $sql = "INSERT INTO lesson(chapter_id, lesson_name, lesson_description) VALUES ('$chapterid', '$lessonname', '$lessondescription')";
+            $result = mysqli_query($con,$sql);
+
+            if($result) echo json_encode(['message' => 'Successfully checked quiz <b>'.$_POST['username'].'</b>']);
+            else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
+            break;
         
         // Action Not Found
 

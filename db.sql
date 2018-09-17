@@ -105,7 +105,11 @@ CREATE TABLE IF NOT EXISTS `lesson` (
 -- Dumping data for table caipl.lesson: ~1 rows (approximately)
 /*!40000 ALTER TABLE `lesson` DISABLE KEYS */;
 INSERT INTO `lesson` (`id`, `chapter_id`, `lesson_name`, `lesson_description`) VALUES
-	(1, 1, '1', 'Panimulang pag aaral ng panitikan ');
+	(1, 1, 'Panimulang pag aaral ng panitikan', "Maraming pakahulugan ang iba’t ibang manunulat tumgkol sa panitikan. May nag sasabing “Ang tunay na kahulugan daw ng panitikan ay yaong pag papahayag ng damdamin, panaginip, at karanasan ng sangkatauhan nasusulat sa maganda, makahulugan, at manising na mga pahayag’’ . Sa aklat nina Atienza, Ramos, Zalazar, at Nazal na pinamagatang “Panitikang Pilipino, ipinahahayag na “ang tunay na panitikan ay yaong walang kamatayan’ yaong nagpapahayag ng damdamin ng tao bilang ganti niya sareaksyon sa kanyang pang araw-araw na pagsusumikap upang mabuhay at lumigaya sa kanyang kapaligiran ay gayun din sa kanyang pasusumikap na Makita ang Maykapal.
+	Si bro. Azarias ay nag sabing “ang panitikan ay ang pagpapahayag ng damdamin ng tao, sa lipunan, sa pamahalaan, sa kapaligiran, sa kapwa, at sa Dakilang Lumikha”. Ang pagpapahayag dawn g damdamin ng isang nilikha ay maaring sa pamamagitan ng pag ibig, kalungkutan, kaligayahan, galit o poot, pagkahabag, pag alipusta, paghihiganti at iba pa.	
+	Ayon naman sa Webster, sa kaniyang pinakabuod na kahulugan, “anu mang bagay raw naisasatitik, basta may kaugnayan sa pag iisip at damdamin ng tao, maging ito ay totoo, kathang isip o bungang tulog lamang ay maaaring tawaging panitikan”.
+	Ganito naman ang makabayanihang pakahulugan ni Maria Ramon sa panitikan. Ayon sa kanya “Ang panitikan ay kasaysayan ng kaluluwa ng mga mamamayan. Sa panitikan  nasasalamin ang mga layunin, damdamin, panaginip, pag-asa, hinaing at guni guni ng mga mamamayan na nasusulat o binabanggit sa sa maganda,makulay, makahulugan, matalinhaga, at masining na mga pahayag”.Ang panitikan ay nag bubunsod sa pagkilos ng mga mamamayan sa kanyang pagkamakabayan o nasyonalismo. Ito ang lakas na nagbubuklod ng kanilang damdamin, nagdidilat ng mga kanilang mata sa katwiran at katarungan.
+	Ang panitikan ay indi lamang lumilinang ng nasyonalismo kundi ito ay nag iingat din ng mga karanasan, tradisyon at mga mithiin ng bawat bansa. Hinuhubog sa panitikan ang kagandahan ng kultura ng bawat lipunan. Dito nasusulat ang henyo ng bawat panahon. Ito’y walang paglipas hanggang may tao sa sandaigdigan. Ang panitikan ay isang ilaw ng walang kamatayang tumatanglaw sa kabihasnan ng tao.");
 /*!40000 ALTER TABLE `lesson` ENABLE KEYS */;
 
 -- Dumping structure for table caipl.quiz
@@ -124,12 +128,23 @@ CREATE TABLE IF NOT EXISTS `quiz` (
 -- Dumping data for table caipl.quiz: ~6 rows (approximately)
 /*!40000 ALTER TABLE `quiz` DISABLE KEYS */;
 INSERT INTO `quiz` (`id`, `lesson_id`, `quiz_question`, `option_1`, `option_2`, `option_3`, `option_4`, `answer`) VALUES
-	(1, 1, '1 + 1 = ?', '2', '3', '4', '5', '2'),
-	(2, 1, '1 + 2 = ?', '3', '4', '5', '6', '3'),
-	(3, 1, '1 + 3 = ?', '4', '5', '6', '7', '4'),
-	(4, 1, '2 + 1 = ?', '2', '3', '4', '5', '3'),
-	(5, 1, '2 + 2 = ?', '2', '3', '4', '5', '4'),
-	(6, 1, '5 + 2 = ?', '2', '7', '4', '5', '7');
+	(1, 1, "ITO AY MAY HIMIG NA AWIT DAHILANG ITO AY INAAWIT HABANG MAY NAGSASAYAW.", 'BALAD', 'SONETO', 'DALIT', 'ELEHIYA', '1'),
+	(2, 1, "ITO’Y TULANG MAY LABING-APAT NA TALUDTOD.", 'BALAD', 'DALIT', 'ELEHIYA', 'SONETO', '4'),
+	(3, 1, "ITO AY KARANIWANG GINAGAMIT SA LAHAT NG MGA DULANG MUSIKA, KASAMA NA ANG OPERA.", 'KOMEDYA', 'MELODRAMA', 'TRAHEDYA', 'PARSA', '2'),
+	(4, 1, "ITO AY BATAY SA ALAMAT NG SINGSING NG ISANG PRINSESA NA NAIHULOG NIYA SA DAGAT SA HANGARIN NITONG MAPANGASAWA ANG KASINTAHANG MAHIRAP.", 'DUPLO', 'BALAGTASAN', 'KARAGATAN', 'SAYNETE', '3'),
+	(5, 1, "ITO’Y ISANG MAHABANG SALAYSAYING NAHAHATI SA MGA KABANATA.", 'NOBELA', 'MAIKLING KWENTO', 'DULA', 'ALAMAT', '1'),
+	(6, 1, "ITO’Y PAGPAPAHAYAG NG KURU-KUROO OPINYON NG MAY AKDA TUNGKOL SA ISANG SULIRANIN O PANGYAYARI.", 'TALAMBUHAY', 'BALITA', 'ANEKDOTA', 'SANAYSAY', '4'),
+	(7, 1, "ITO’Y ISANG PAGPAPAHAYAG NA BINIBIGKAS SA HARAP NG MGA TAGAPAKINIG.", 'TALUMPATI', 'BALITA', 'TALAMBUHAY', 'ANEKDOTA', '1'),
+	(8,	1, "ITO’Y MGA SALAYSAYING HANGO SA BIBLIYA NA TULAD NG ANEKDOTA.", 'TALUMPATI', 'ALAMAT', 'SANAYSAY', 'PARABULA', '4'),
+	(9,	1, "ITO’Y ISANG URI NG PAGPAPAHAYAG NA NAGSASALAYSAY NG ISANG KARANASAN.", 'PAGLALAHAD', 'PAGSASALAYSAY', 'PAGLALARAWAN', 'PANGANGATWIRAN', '2'),
+	(10, 1, "MGA LIKHANG ISIP LAMANG NG MGA MANUNULAT ANG MGA MAIKLING SAYSAYING ITO NA ANG TANGING LAYUNIN AY MAKAPAGBIGAY ARAL SA MGA MAMBABASA.", 'ALAMAT', 'ANEKDOTA', 'SANAYSAY', 'BALITA', '2');
+
+	-- (1, 1, '1 + 1 = ?', '2', '3', '4', '5', '1'),
+	-- (2, 1, '1 + 2 = ?', '3', '4', '5', '6', '1'),
+	-- (3, 1, '1 + 3 = ?', '4', '5', '6', '7', '1'),
+	-- (4, 1, '2 + 1 = ?', '2', '3', '4', '5', '2'),
+	-- (5, 1, '2 + 2 = ?', '2', '3', '4', '5', '3'),
+	-- (6, 1, '5 + 2 = ?', '2', '7', '4', '5', '2');
 /*!40000 ALTER TABLE `quiz` ENABLE KEYS */;
 
 -- Dumping structure for view caipl.quiz_listing

@@ -24,25 +24,25 @@
         </a>
       </div>
       <div class="col-xs-6 col-md-2 caipl-dashboard-icons">
-        <a href="#" class="text-dark">
+        <a href="create-lesson.php" class="text-dark">
           <img src="assets/images/icons/lesson-create.png">
           <h4>Create Lessons</h4>
         </a>
       </div>
       <div class="col-xs-6 col-md-2 caipl-dashboard-icons">
-        <a href="#" class="text-dark">
+        <a href="lesson.php" class="text-dark">
           <img src="assets/images/icons/lesson-view.png">
           <h4>View Lessons</h4>
         </a>
       </div>
       <div class="col-xs-6 col-md-2 caipl-dashboard-icons">
-        <a href="#" class="text-dark">
+        <a href="create-quiz.php" class="text-dark">
           <img class="" src="assets/images/icons/quiz-create.png">
           <h4>Create Quizzes</h4>
         </a>
       </div>
       <div class="col-xs-6 col-md-2 caipl-dashboard-icons">
-        <a href="#" class="text-dark">
+        <a href="quizzes.php" class="text-dark">
           <img src="assets/images/icons/quiz-view.png">
           <h4>View Quizzes</h4>
         </a>
