@@ -27,9 +27,6 @@
         <div class="col-12 col-md-6">
             <!-- Title -->
             <h2>
-                <a class="text-dark" href="index.php">
-                    <i class="material-icons ">keyboard_backspace</i>
-                </a>
                 <span>Log in</span>
             </h2>
 

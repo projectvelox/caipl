@@ -15,9 +15,6 @@
 
             <!-- Title -->
             <h2>
-                <a class="text-dark" href="index.php">
-                    <i class="material-icons">keyboard_backspace</i>
-                </a>
                 <span>Account Registration</span>
             </h2>
 

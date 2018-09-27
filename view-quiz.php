@@ -46,36 +46,9 @@
 
   <script type="text/javascript">
   $(document).ready(function () {
-        var Dialog = new BootstrapDialog({
-            buttonClass: 'btn-primary'
-        });
-        $('#QuizForm').on('submit', function (e) {
-            e.preventDefault();
-            var serialized_array = $(this).serializeArray();
-            var data = {
-                action: 'check-quiz'
-            };
-            for(var i = 0; i < serialized_array.length; i++) {
-                var item = serialized_array[i];
-                data[item.name] = item.value;
-            }
-            Dialog.confirm('Are you sure?', 'Are you sure you want to submit your answers?', function (yes) {
-                if(yes) {
-                    var preloader = new Dialog.preloader('Checking quiz');
-                    $.ajax({
-                        type: 'POST',
-                        url: 'config/api.php',
-                        data: data
-                    }).then(function(data) {
-                        if(data.error) Dialog.alert('Quiz Error: ' + data.error[0], data.error[1]);
-                        else Dialog.alert('Quiz Success', data.message);
-                    }).catch(function (error) {
-                        Dialog.alert('Quiz Error', error.statusText || 'Server Error');
-                    }).always(function () {
-                        preloader.destroy();
-                    });
-                }
-            });
+        
+        $('#QuizForm').on('submit', function() {
+            
         });
   });
   </script>
