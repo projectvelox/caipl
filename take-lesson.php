@@ -41,7 +41,15 @@
                     }
                     mysqli_close($con);
                 ?>
+                <option value="chapter2.php">Kabanata 2</option>
                 <option value="chapter3.php">Kabanata 3</option>
+                <option value="chapter4.php">Kabanata 4</option>
+                <option value="chapter5.php">Kabanata 5</option>
+                <option value="chapter6.php">Kabanata 6</option>
+                <option value="chapter7.php">Kabanata 7</option>
+                <option value="chapter8.php">Kabanata 8</option>
+                <option value="chapter9.php">Kabanata 9</option>
+                <option value="chapter10.php">Kabanata 10</option>
             </select>
         </div>
         <a href="view-lesson.php"><button type="button" class="btn btn-dark">Take lesson</button></a>
