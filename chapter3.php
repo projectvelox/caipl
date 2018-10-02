@@ -34,7 +34,11 @@
 		<div class="col-md-4">
 			<h2>Lesson Attachments</h2>
 		  	<a href="documentation/KABANATA-III.docx">KABANATA-III.docx</a><br>
-		  	<a href="documentation/Leron Leron Sinta Animated (Filipino  Tagalog Folk Song)  Awiting Pambata.mp3" target="_blank">Leron Leron Sinta Animated (Filipino  Tagalog Folk Song)  Awiting Pambata.mp3</a>
+		  	<a href="documentation/Leron Leron Sinta Animated (Filipino  Tagalog Folk Song)  Awiting Pambata.mp3" target="_blank">Leron Leron Sinta Animated (Filipino  Tagalog Folk Song)  Awiting Pambata.mp3</a><br>
+		  	<a href="documentation/Atin Cu Pung Singsing Animated  Kapampangan Folk Song.mp3" target="_blank">Atin Cu Pung Singsing Animated  Kapampangan Folk Song.mp3</a><br>
+		  	<a href="documentation/Filipino Lullaby - Dandansoy - Lolita Carbon (ASIN) + lyrics + Translation in Subs.mp3" target="_blank">Filipino Lullaby - Dandansoy - Lolita Carbon (ASIN) + lyrics + Translation in Subs.mp3</a><br>
+		  	<a href="documentation/Pamulinawen - Susan Cuevas.mp4.mp3" target="_blank">Pamulinawen - Susan Cuevas.mp3</a><br>
+		  	<a href="documentation/Bicol-Sarong banggi-videoke.mp3" target="_blank">Bicol-Sarong banggi-videoke.mp3</a>
 		</div>
 	</div>
   </div>

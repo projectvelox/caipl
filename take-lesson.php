@@ -26,7 +26,7 @@
         <div class="form-group">
             <select class="form-control"
                 required="required"
-                name="lessonselection">
+                name="lessonselection" id="dynamic_select">
                 <option selected disabled>Choose an option</option>
                 <?php
                     $i=0;
@@ -41,6 +41,7 @@
                     }
                     mysqli_close($con);
                 ?>
+                <option value="chapter3.php">Kabanata 3</option>
             </select>
         </div>
         <a href="view-lesson.php"><button type="button" class="btn btn-dark">Take lesson</button></a>
@@ -49,6 +50,18 @@
   <script type="text/javascript">
     $('#TakeLessonForm').on('submit', function (e) {
     });
+
+    $(function(){
+      // bind change event to select
+      $('#dynamic_select').on('change', function () {
+          var url = $(this).val(); // get selected value
+          if (url) { // require a URL
+              window.location = url; // redirect
+          }
+          return false;
+      });
+    });
+
   </script>
 </body>
 </html>
