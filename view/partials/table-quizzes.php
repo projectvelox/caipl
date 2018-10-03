@@ -2,15 +2,14 @@
 	<table class="table table-striped table-bordered table-hover">
 	  	<tr>
 	  		<th>#</th>
-	  		<th>Chapter</th>
-	  		<th>Lesson</th>
-	  		<th>Question</th>
+	  		<th>Kabanata</th>
+	  		<th>Aralin</th>
+	  		<th>Tanong</th>
 	  		<th>A</th>
 	  		<th>B</th>
 	  		<th>C</th>
 	  		<th>D</th>
-	  		<th>Answer</th>
-	  		<th>Action</th>
+	  		<th>Sagot</th>
 	  	</tr>
 	  	<?php
 	  		$i=0;
@@ -29,13 +28,6 @@
 				echo "<td>" . $row['option_3'] . "</td>";
 				echo "<td>" . $row['option_4'] . "</td>";
 				echo "<td>" . $row['answer'] . "</td>";
-				echo "
-					<td>
-						<button class='btn btn-sm btn-dark'>
-							<i class='material-icons'>send</i>
-						</button>
-					</td>";
-					
 				echo "</tr>";
 			}
 			mysqli_close($con);
