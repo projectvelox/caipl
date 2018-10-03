@@ -27,10 +27,10 @@
 	</nav>
 
 	<div class="container mt-3 mh75vh" id="bad-background">		
-		<h2><?php echo $_SESSION['account']['firstname'] ?>'s Profile</h2>
-		<span>Get the looks and feels of your profile</span>
+		<h2>Ang iyong profile, <?php echo $_SESSION['account']['firstname'] ?></h2>
+		<span>Kunin ang mga hitsura at pakiramdam ng iyong profile</span>
 		<div class="d-flex justify-content-end">
-			<button class='btn btn-dark text-white' data-toggle="modal" data-target="#modal-edit-account">Edit Profile</button>
+			<button class='btn btn-dark text-white' data-toggle="modal" data-target="#modal-edit-account">Ibahin ang profile</button>
 		</div><hr>
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered" id="accountListing">

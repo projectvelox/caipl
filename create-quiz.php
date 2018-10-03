@@ -90,21 +90,6 @@
 
             <p id="result"></p>
         </div>
-        <div class="col-xs-12 col-md-6">
-
-
-            <!-- Title -->
-            <h2>
-                <span>Create Quiz Questions</span>
-            </h2>
-
-            <!-- Subtitle -->
-            <p>Add questions to a quiz.</p>
-
-            <form id="QuestionForm">
-                
-            </form>
-        </div>
     </div>
 </div>
 

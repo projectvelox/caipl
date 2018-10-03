@@ -30,9 +30,6 @@
                 <span>Log in</span>
             </h2>
 
-            <!-- Subtitle -->
-            <p>log in to you account</p>
-
             <!-- Login Form -->
             <form id="LoginForm">
 
@@ -55,7 +52,7 @@
                 <!-- Submit -->
                 <button type="submit"
                         class="btn btn-dark">
-                    Login to account
+                    Mag-login sa account
                 </button>
             </form>
         </div>

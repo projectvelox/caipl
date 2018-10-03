@@ -12,7 +12,7 @@
     <nav aria-label="breadcrumb">
 	  <ol class="breadcrumb bg-dark">
 	    <li class="breadcrumb-item caipl-link"><a href="admin-dashboard.php">Admin Dashboard</a></li>
-	    <li class="breadcrumb-item active text-warning" aria-current="page">Create Lessons</li>
+	    <li class="breadcrumb-item active text-warning" aria-current="page">Lumikha ng Aralin</li>
 	  </ol>
 	</nav>
 
@@ -20,51 +20,11 @@
     <div class="row">
         <div class="col-xs-12 col-md-6">
 
-            <!-- Title -->
-            <h2>
-                <span>Create Chapter</span>
-            </h2>
-
-            <!-- Subtitle -->
-            <p>Add a chapter for learning.</p>
-
-            <!-- Chapter Form -->
-            <form id="ChapterForm">
-                <!-- Chapter Name -->
-                <div class="form-group">
-                    <input type="text" class="form-control"
-                           required="required"
-                           name="chaptername"
-                           placeholder="Enter the chapter name">
-                </div>
-
-                <!-- Chapter Description -->
-                <div class="form-group">
-                    <textarea
-                           class="form-control"
-                           required="required"
-                           name="chapterdescription"
-                           placeholder="Enter the chapter description"></textarea>
-                </div>
-
-                <!-- Submit -->
-                <button type="submit" class="btn btn-dark">Add chapter</button>
-            </form>
-
-
-
-            <p id="result"></p>
-        </div>
-        <div class="col-xs-12 col-md-6">
-
 
             <!-- Title -->
             <h2>
-                <span>Create Lesson</span>
+                <span>Lumikha ng Aralin</span>
             </h2>
-
-            <!-- Subtitle -->
-            <p>Add a lesson to a chapter.</p>
 
             <!-- Lesson Form -->
             <form id="LessonForm">
@@ -73,7 +33,7 @@
                     <select class="form-control"
                            required="required"
                            name="lessonchaptername">
-                        <option selected disabled>Select the chapter</option>
+                        <option selected disabled>Piliin ang kabanata</option>
                         <?php
                             $i=0;
                             $con = mysqli_connect("localhost","root","","caipl");
@@ -96,7 +56,7 @@
                     <input type="text" class="form-control"
                            required="required"
                            name="lessonname"
-                           placeholder="Enter the lesson name">
+                           placeholder="Ipasok ang pangalan ng aralin">
                 </div>
 
                 <!-- Chapter Description -->
@@ -105,11 +65,11 @@
                            class="form-control"
                            required="required"
                            name="lessondescription"
-                           placeholder="Enter the lesson description"></textarea>
+                           placeholder="Ipasok ang paglalarawan ng aralin"></textarea>
                 </div>
 
                 <!-- Submit -->
-                <button type="submit" class="btn btn-dark">Add lesson</button>
+                <button type="submit" class="btn btn-dark">Magdagdag ng aralin</button>
         </div>
     </div>
 </div>

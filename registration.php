@@ -18,11 +18,32 @@
                 <span>Account Registration</span>
             </h2>
 
-            <!-- Subtitle -->
-            <p>Sign up for your very own account</p>
-
             <!-- Registration Form -->
             <form id="RegistrationForm">
+                <!-- First Name -->
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control"
+                           required="required"
+                           name="firstname"
+                           placeholder="Enter your first name">
+                </div>
+
+                <!-- Middle Name -->
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control"
+                           name="middlename"
+                           placeholder="Enter your middle name">
+                </div>
+
+                <!-- Last Name -->
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control"
+                           name="lastname"
+                           placeholder="Enter your last name">
+                </div>
                 <!-- Student ID -->
                 <div class="form-group">
                     <input type="text" class="form-control"
@@ -49,30 +70,7 @@
                            placeholder="Enter your password">
                 </div><hr>
 
-                <!-- First Name -->
-                <div class="form-group">
-                    <input type="text"
-                           class="form-control"
-                           required="required"
-                           name="firstname"
-                           placeholder="Enter your first name">
-                </div>
-
-                <!-- Middle Name -->
-                <div class="form-group">
-                    <input type="text"
-                           class="form-control"
-                           name="middlename"
-                           placeholder="Enter your middle name">
-                </div>
-
-                <!-- Last Name -->
-                <div class="form-group">
-                    <input type="text"
-                           class="form-control"
-                           name="lastname"
-                           placeholder="Enter your last name">
-                </div>
+                
 
                 <!-- Submit -->
                 <button type="submit" class="btn btn-dark">Register account</button>
