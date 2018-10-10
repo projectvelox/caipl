@@ -22,87 +22,45 @@
     <h2>Lessons</h2>
     <p>Below are the list of lessons</p><hr>
     
-    <div class="row">
-      <div class="col-xs-6 col-md-2">
-        <img class="img-fluid" src="assets/images/icons/lesson-view.png" style="height: 100px"><br>
-        <a href="#"><strong>Kabanata 1</strong></a>
-      </div>
-      <div class="col-xs-6 col-md-2" style="padding: 10px">
-        <img class="img-fluid" src="assets/images/icons/lesson-view.png" style="height: 100px"><br>
-        <a href="chapter2.php"><strong>Kabanata 2</strong></a>
-      </div>
-      <div class="col-xs-6 col-md-2" style="padding: 10px">
-        <img class="img-fluid" src="assets/images/icons/lesson-view.png" style="height: 100px"><br>
-        <a href="chapter3.php"><strong>Kabanata 3</strong></a>
-      </div>
-      <div class="col-xs-6 col-md-2" style="padding: 10px">
-        <img class="img-fluid" src="assets/images/icons/lesson-view.png" style="height: 100px"><br>
-        <a href="chapter4.php"><strong>Kabanata 4</strong></a>
-      </div>
-      <div class="col-xs-6 col-md-2" style="padding: 10px">
-        <img class="img-fluid" src="assets/images/icons/lesson-view.png" style="height: 100px"><br>
-        <a href="chapter5.php"><strong>Kabanata 5</strong></a>
-      </div>
-      <div class="col-xs-6 col-md-2" style="padding: 10px">
-        <img class="img-fluid" src="assets/images/icons/lesson-view.png" style="height: 100px"><br>
-        <a href="chapter6.php"><strong>Kabanata 6</strong></a>
-      </div>
-      <div class="col-xs-6 col-md-2" style="padding: 10px">
-        <img class="img-fluid" src="assets/images/icons/lesson-view.png" style="height: 100px"><br>
-        <a href="chapter7.php"><strong>Kabanata 7</strong></a>
-      </div>
-      <div class="col-xs-6 col-md-2" style="padding: 10px">
-        <img class="img-fluid" src="assets/images/icons/lesson-view.png" style="height: 100px"><br>
-        <a href="chapter8.php"><strong>Kabanata 8</strong></a>
-      </div>
-      <div class="col-xs-6 col-md-2" style="padding: 10px">
-        <img class="img-fluid" src="assets/images/icons/lesson-view.png" style="height: 100px"><br>
-        <a href="chapter9.php"><strong>Kabanata 9</strong></a>
-      </div>
-      <div class="col-xs-6 col-md-2" style="padding: 10px">
-        <img class="img-fluid" src="assets/images/icons/lesson-view.png" style="height: 100px"><br>
-        <a href="chapter10.php"><strong>Kabanata 10</strong></a>
-      </div>
-    </div>
 
-    <!-- <form id="TakeLessonForm" method="post">
-        <div class="form-group">
-            <select class="form-control"
-                required="required"
-                name="lessonselection" id="dynamic_select">
-                <option selected disabled>Choose an option</option>
-                <?php /*
+    <form id="TakeLessonForm" method="post">
+
+                <?php 
                     $i=0;
                     $con = mysqli_connect("localhost","root","","caipl");
-                    $result = mysqli_query($con,"SELECT id, lesson_name FROM lesson");
+                    //$result = mysqli_query($con,"SELECT id, lesson_name FROM lesson");
+                    $result = mysqli_query($con, "SELECT * FROM chapter");
                     while($row = mysqli_fetch_array($result))
                     {
                         $i++;
-                        echo "<option value=" . $row['id'] . ">";
+                        $chapterid = $row['id'];
+
+                        echo "<p>" . $row['chapter_name'] . "</p>";
+                        $results = mysqli_query($con, "SELECT * FROM lesson WHERE chapter_id='$chapterid'");
+                        echo "<ul>";
+                        while($rows = mysqli_fetch_array($results))
+                        {
+                            echo "<li>" . $rows['lesson_name'] . "</li>";
+                        }
+                        echo "</ul>";
+
+                        /* echo "<option value=" . $row['id'] . ">";
                         echo $row['lesson_name'];
-                        echo "</option>";
+                        echo "</option>"; */
+
+
                     }
-                    mysqli_close($con); */
+                    mysqli_close($con); 
                 ?>
-                <option value="chapter2.php">Kabanata 2</option>
-                <option value="chapter3.php">Kabanata 3</option>
-                <option value="chapter4.php">Kabanata 4</option>
-                <option value="chapter5.php">Kabanata 5</option>
-                <option value="chapter6.php">Kabanata 6</option>
-                <option value="chapter7.php">Kabanata 7</option>
-                <option value="chapter8.php">Kabanata 8</option>
-                <option value="chapter9.php">Kabanata 9</option>
-                <option value="chapter10.php">Kabanata 10</option>
-            </select>
-        </div>
+
         <a href="view-lesson.php"><button type="button" class="btn btn-dark">Take lesson</button></a>
-    </form> -->
+    </form>
   </div>
   <script type="text/javascript">
     $('#TakeLessonForm').on('submit', function (e) {
     });
 
-    $(function(){
+    /* $(function(){
       // bind change event to select
       $('#dynamic_select').on('change', function () {
           var url = $(this).val(); // get selected value
@@ -111,7 +69,7 @@
           }
           return false;
       });
-    });
+    }); */
 
   </script>
 </body>
