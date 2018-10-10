@@ -19,7 +19,7 @@
 	</nav>
   
   <div class="container mt-5 mh60vh" id="bad-background">
-    <h2>Lessons</h2>
+    <h2>Table of Content</h2>
     <p>Below are the list of lessons</p><hr>
     
 
@@ -40,7 +40,8 @@
                         echo "<ul>";
                         while($rows = mysqli_fetch_array($results))
                         {
-                            echo "<li>" . $rows['lesson_name'] . "</li>";
+                          $id = $rows['id'];
+                            echo "<li><a href='view-lesson.php?id=$id'>" . $rows['lesson_name'] . "</a></li>";
                         }
                         echo "</ul>";
 
