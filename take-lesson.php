@@ -35,7 +35,7 @@
                         $i++;
                         $chapterid = $row['id'];
 
-                        echo "<p>" . $row['chapter_name'] . "</p>";
+                        echo "<p><strong>" . $row['chapter_name'] . "</strong></p>";
                         $results = mysqli_query($con, "SELECT * FROM lesson WHERE chapter_id='$chapterid'");
                         echo "<ul>";
                         while($rows = mysqli_fetch_array($results))
