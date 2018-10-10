@@ -54,7 +54,7 @@
                     mysqli_close($con); 
                 ?>
 
-        <a href="view-lesson.php"><button type="button" class="btn btn-dark">Take lesson</button></a>
+       
     </form>
   </div>
   <script type="text/javascript">
