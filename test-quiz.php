@@ -6,9 +6,7 @@
 
 <body>
   <?php 
-    // include 'view/partials/modal-notification.php';
-    // include 'view/partials/modal-registration.php'; 
-  include 'view/partials/navbar.php';
+    include 'view/partials/navbar.php';
   ?>      
 
   <nav aria-label="breadcrumb">

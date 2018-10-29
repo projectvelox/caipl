@@ -14,15 +14,13 @@
   <nav aria-label="breadcrumb">
 	  <ol class="breadcrumb bg-dark">
 	    <li class="breadcrumb-item caipl-link"><a href="user-dashboard.php">User Dashboard</a></li>
-	    <li class="breadcrumb-item active text-warning" aria-current="page">Take Lessons</li>
+	    <li class="breadcrumb-item active text-warning" aria-current="page">Pumili ng mga Aralin</li>
 	  </ol>
 	</nav>
   
-  <div class="container mt-5 mh60vh" id="bad-background">
-    <h2>Table of Content</h2>
-    <p>Below are the list of lessons</p><hr>
-    
-
+  <div class="container mt-5 mh60vh">
+    <h2>Talaan ng nilalaman</h2>
+    <p>Nasa ibaba ang listahan ng mga aralin</p><hr>
     <form id="TakeLessonForm" method="post">
 
                 <?php 
@@ -55,7 +53,7 @@
                 ?>
 
        
-    </form>
+    </form><hr>
   </div>
   <script type="text/javascript">
     $('#TakeLessonForm').on('submit', function (e) {
