@@ -8,7 +8,7 @@
   <!-- Navbar -->
   <?php include 'view/partials/navbar.php'?>      
   
-  <div class="container mt-5 mh75vh" id="bad-background">
+  <div class="container mt-5 mh75vh" >
     <h2>User Dashboard - Maligayang pagdating <?php echo $_SESSION['account']['firstname'] ?></h2><hr>
     <div class="row">
       <div class="col-xs-6 col-md-2 caipl-dashboard-icons">
