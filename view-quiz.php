@@ -27,24 +27,16 @@
  </nav>
 
  <div class="container mt-5 mh75vh">
-  <h2><?=$varLessonName?>'s Pagsusulit</h2><hr>
+  <h2>Pagsusulit ng <?=$varLessonName?></h2><hr>
   <form id="QuizForm">
    <?php
-   $i=1;
+   $i=0;
    $con = mysqli_connect("localhost","root","","caipl");
    $result = mysqli_query($con,"SELECT * FROM quiz WHERE lesson_id='$id'");
    while($row = mysqli_fetch_array($result))
    {
-    echo "<div class='form-group'>";
-    echo "<div>" . $i . ". " . $row['quiz_question'] . "</div>";
-    echo "<select name='answer" . $row['id'] . "'>";
-    echo "<option selected disabled>Choose an option</option>";
-    echo "<option value='1'>" . $row['option_1'] . "</option>";
-    echo "<option value='2'>" . $row['option_2'] . "</option>";
-    echo "<option value='3'>" . $row['option_3'] . "</option>";
-    echo "<option value='4'>" . $row['option_4'] . "</option>";
-    echo "</select>";
-    echo "</div>";
+    $i++;
+    echo "<p>" . $i . ". " . ucfirst(strtolower($row['quiz_question'])) . "</p>";
   }
   mysqli_close($con);
   ?><hr>
