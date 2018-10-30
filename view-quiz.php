@@ -37,18 +37,55 @@
    {
     $i++;
     echo "<p>" . $i . ". " . ucfirst(strtolower($row['quiz_question'])) . "</p>";
+    echo "
+      <div class='form-check'>
+        <label class='form-check-label'>
+          <input type='radio' class='form-check-input' name='optradio_".$row['id']."' value='1'>" . ucfirst(strtolower($row['option_1'])) . "
+        </label>
+      </div>
+      <div class='form-check'>
+        <label class='form-check-label'>
+          <input type='radio' class='form-check-input' name='optradio_".$row['id']."' value='2'>" . ucfirst(strtolower($row['option_2'])) . "
+        </label>
+      </div>
+      <div class='form-check'>
+        <label class='form-check-label'>
+          <input type='radio' class='form-check-input' name='optradio_".$row['id']."' value='3'>" . ucfirst(strtolower($row['option_3'])) . "
+        </label>
+      </div>
+      <div class='form-check'>
+        <label class='form-check-label'>
+          <input type='radio' class='form-check-input' name='optradio_".$row['id']."' value='4'>" . ucfirst(strtolower($row['option_4'])) . "
+        </label>
+      </div><br>
+    ";
   }
   mysqli_close($con);
   ?><hr>
-  <button type="submit" class="btn btn-dark">Submit answers</button>
+  <button type="button" class="btn btn-dark submit_quiz">Submit answers</button>
 </form>
-</div>
+</div><br>
 
 <script type="text/javascript">
   $(document).ready(function () {
-
-    $('#QuizForm').on('submit', function() {
-
+    $('.submit_quiz').on('click', function() {
+      var id = <?=$id?>;
+        var serialized_array = $(this).serializeArray();
+        var data = {
+          id: id,
+          action: 'get-results'
+        };
+        for(var i = 0; i < serialized_array.length; i++) {
+          var item = serialized_array[i];
+          data[item.name] = item.value;
+        }
+        $.ajax({
+          type:"POST",
+          url:"config/ajax.php",
+          data: data,
+        }).then(function(data) {
+          alert(data)
+        });
     });
   });
 </script>
