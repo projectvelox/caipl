@@ -40,7 +40,7 @@
     echo "
       <div class='form-check'>
         <label class='form-check-label'>
-          <input type='radio' class='form-check-input' name='optradio_".$row['id']."' value='1'>" . ucfirst(strtolower($row['option_1'])) . "
+          <input type='radio' class='form-check-input' name='optradio_".$row['id']."' required value='1'>" . ucfirst(strtolower($row['option_1'])) . "
         </label>
       </div>
       <div class='form-check'>
@@ -62,14 +62,16 @@
   }
   mysqli_close($con);
   ?><hr>
-  <button type="button" class="btn btn-dark submit_quiz">Submit answers</button>
+  <button type="submit" class="btn btn-dark submit_quiz">Submit answers</button>
 </form>
 </div><br>
 
 <script type="text/javascript">
   $(document).ready(function () {
-    $('.submit_quiz').on('click', function() {
-      var id = <?=$id?>;
+    $('#QuizForm').on('submit', function (e) {
+        e.preventDefault();
+        
+        var id = <?=$id?>;
         var serialized_array = $(this).serializeArray();
         var data = {
           id: id,
@@ -84,7 +86,7 @@
           url:"config/ajax.php",
           data: data,
         }).then(function(data) {
-          alert(data)
+          location.href = 'scores.php?score=' + data + '&id='+id
         });
     });
   });

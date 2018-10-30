@@ -16,16 +16,18 @@ switch ($_POST["action"]) {
 
         while ($row = mysqli_fetch_array($result)) {                            
             $answer = $row['answer'];            
-            $q = 'optradio_2';
-
-            /* $q = trim($q);
-            if ($_POST[$q] == $answer) {                
+            $q = $_POST['optradio_'.$row["id"]];
+            if ($q == $answer) {                
                 $score++;                 
-            }*/
-        }       
-        
-        echo $print_r[$q];
+            }
+        }
 
+        $student = $_SESSION['account']['firstname'] . " " . $_SESSION['account']['middlename'] . " " . $_SESSION['account']['lastname'];
+        $totalscore = $score . "/" . $total;
+        $insertsql = "INSERT INTO scores(quiz_id, student, score) VALUES ('$id', '$student', '$totalscore')";
+        $insertresult = mysqli_query($con,$insertsql);
+        
+        echo $totalscore;
         break;
 
 
