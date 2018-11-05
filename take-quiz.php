@@ -39,7 +39,7 @@
               while($rows = mysqli_fetch_array($results))
               {
                 $id = $rows['id'];
-                echo "<li><a href='view-quiz.php?id=$id'>" . $rows['lesson_name'] . "</a></li>";
+                echo "<li><a href='view-quiz.php?id=$id'>Pagsusulit para sa aralin</a></li>";
               }
               echo "</ul>";
 
@@ -59,25 +59,25 @@
                 <div class="carousel-item active">
                     <img class="first-slide" src="assets/images/carousel/1.jpg">
                     <div class="carousel-caption">
-                        <a href="https://i.pinimg.com/564x/9a/98/1e/9a981ee597294410e041b2193eb1b356.jpg" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;"><strong>Link for Reference<br></strong>https://i.pinimg.com/564x/9a/98/1e/9a981ee597294410e041b2193eb1b356.jpg</a>
+                        <a href="https://i.pinimg.com/564x/9a/98/1e/9a981ee597294410e041b2193eb1b356.jpg" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;"><strong>Sanggunian<br></strong>https://i.pinimg.com/564x/9a/98/1e/9a981ee597294410e041b2193eb1b356.jpg</a>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="second-slide" src="assets/images/carousel/2.jpg">
                     <div class="carousel-caption">
-                        <a href="http://www.bayaniart.com/wp-content/uploads/2018/07/General-AntonioLuna.jpg" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;">Link for Reference<br>http://www.bayaniart.com/wp-content/uploads/2018/07/General-AntonioLuna.jpg</a>
+                        <a href="http://www.bayaniart.com/wp-content/uploads/2018/07/General-AntonioLuna.jpg" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;">Sanggunian<br>http://www.bayaniart.com/wp-content/uploads/2018/07/General-AntonioLuna.jpg</a>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="second-slide" src="assets/images/carousel/3.jpg">
                     <div class="carousel-caption">
-                        <a href="http://userscontent2.emaze.com/images/6f2cda7a-199c-4880-82a4-1a4307564d9c/Slide7_Pic2_636425857847840709.png" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;">Link for Reference<br>http://userscontent2.emaze.com/images/6f2cda7a-199c-4880-82a4-1a4307564d9c/Slide7_Pic2_636425857847840709.png</a>
+                        <a href="http://userscontent2.emaze.com/images/6f2cda7a-199c-4880-82a4-1a4307564d9c/Slide7_Pic2_636425857847840709.png" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;">Sanggunian<br>http://userscontent2.emaze.com/images/6f2cda7a-199c-4880-82a4-1a4307564d9c/Slide7_Pic2_636425857847840709.png</a>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img class="second-slide" src="assets/images/carousel/4.jpg">
                     <div class="carousel-caption">
-                        <a href="https://xiaochua.files.wordpress.com/2013/06/10-noong-may-27-sa-mga-kabig-nina-pedro-paterno-at-buencamino-instituto-cervantes.jpg" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;">Link for Reference<br>https://xiaochua.files.wordpress.com/2013/06/10-noong-may-27-sa-mga-kabig-nina-pedro-paterno-at-buencamino-instituto-cervantes.jpg</a>
+                        <a href="https://xiaochua.files.wordpress.com/2013/06/10-noong-may-27-sa-mga-kabig-nina-pedro-paterno-at-buencamino-instituto-cervantes.jpg" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;">Sanggunian<br>https://xiaochua.files.wordpress.com/2013/06/10-noong-may-27-sa-mga-kabig-nina-pedro-paterno-at-buencamino-instituto-cervantes.jpg</a>
                     </div>
                 </div>                
             </div>
@@ -91,7 +91,7 @@
             </a>
         </div>
       </div>
-    </div>
+    </div><hr>
   </div>
   <script type="text/javascript">
     $('#TakeLessonForm').on('submit', function (e) {
