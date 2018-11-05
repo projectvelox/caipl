@@ -22,13 +22,13 @@
 <!-- Navbar -->
 <?php include 'view/partials/navbar.php'?>
 
-<div class="container mt-5 mh75vh" id="bad-background">
+<div class="container mt-5 mh75vh">
     <div class="row">
         <div class="col-12 col-md-6">
             <!-- Title -->
             <h2>
                 <span>Log in</span>
-            </h2>
+            </h2><hr>
 
             <!-- Login Form -->
             <form id="LoginForm">
@@ -59,23 +59,39 @@
 
 
         <!-- Carousel -->
-        <!-- <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="first-slide" src="assets/images/slider/4.png" alt="First slide">
+                        <img class="first-slide" src="assets/images/carousel/1.jpg">
+                        <div class="carousel-caption">
+                            <a href="https://i.pinimg.com/564x/9a/98/1e/9a981ee597294410e041b2193eb1b356.jpg" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;"><strong>Link for Reference<br></strong>https://i.pinimg.com/564x/9a/98/1e/9a981ee597294410e041b2193eb1b356.jpg</a>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="second-slide" src="assets/images/slider/5.png" alt="Second slide">
+                        <img class="second-slide" src="assets/images/carousel/2.jpg">
+                        <div class="carousel-caption">
+                            <a href="http://www.bayaniart.com/wp-content/uploads/2018/07/General-AntonioLuna.jpg" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;">Link for Reference<br>http://www.bayaniart.com/wp-content/uploads/2018/07/General-AntonioLuna.jpg</a>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="third-slide" src="assets/images/slider/6.png" alt="Third slide">
+                        <img class="second-slide" src="assets/images/carousel/3.jpg">
+                        <div class="carousel-caption">
+                            <a href="http://userscontent2.emaze.com/images/6f2cda7a-199c-4880-82a4-1a4307564d9c/Slide7_Pic2_636425857847840709.png" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;">Link for Reference<br>http://userscontent2.emaze.com/images/6f2cda7a-199c-4880-82a4-1a4307564d9c/Slide7_Pic2_636425857847840709.png</a>
+                        </div>
                     </div>
+                    <div class="carousel-item">
+                        <img class="second-slide" src="assets/images/carousel/4.jpg">
+                        <div class="carousel-caption">
+                            <a href="https://xiaochua.files.wordpress.com/2013/06/10-noong-may-27-sa-mga-kabig-nina-pedro-paterno-at-buencamino-instituto-cervantes.jpg" style="color: #fff; font-size: 11px; padding: 5px;  background-color: #0000008a;">Link for Reference<br>https://xiaochua.files.wordpress.com/2013/06/10-noong-may-27-sa-mga-kabig-nina-pedro-paterno-at-buencamino-instituto-cervantes.jpg</a>
+                        </div>
+                    </div>                
                 </div>
                 <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -86,7 +102,7 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-        </div> -->
+        </div>
     </div>
 </div>
 <script type="text/javascript">
