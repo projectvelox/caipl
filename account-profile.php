@@ -13,7 +13,7 @@
 
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb bg-dark">
-	  	<li class="breadcrumb-item caipl-link"><a href="index.php">Home</a></li>
+	  	<li class="breadcrumb-item caipl-link"><a href="index.php"><i class="material-icons">home</i></a></li>
 	  	<?php
 	  		if($_SESSION['account']['typeofaccount']==1) {
 	  			echo '<li class="breadcrumb-item caipl-link"><a href="user-dashboard.php">User Dashboard</a></li>';

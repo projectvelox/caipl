@@ -11,7 +11,7 @@
 
     <nav aria-label="breadcrumb">
 	  <ol class="breadcrumb bg-dark">
-        <li class="breadcrumb-item caipl-link"><a href="index.php">Home</a></li>
+        <li class="breadcrumb-item caipl-link"><a href="index.php"><i class="material-icons">home</i></a></li>
 	    <li class="breadcrumb-item caipl-link"><a href="admin-dashboard.php">Admin Dashboard</a></li>
 	    <li class="breadcrumb-item active text-warning" aria-current="page">Lumikha ng Aralin</li>
 	  </ol>
