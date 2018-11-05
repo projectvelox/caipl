@@ -17,7 +17,7 @@
 	  </ol>
 	</nav>
 
-<div class="container mt-5 mh60vh" id="bad-background">
+<div class="container mt-5 mh60vh">
     <div class="row">
         <div class="col-xs-12 col-md-6">
 
