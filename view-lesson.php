@@ -26,7 +26,7 @@ $varLessonName = $row['lesson_name'];
 			<li class="breadcrumb-item active text-warning" aria-current="page"><?=$varLessonName?></li>
 		</ol>
 	</nav>
-	<iframe src="documentation/PDF/<?=$id?>.pdf" style="width:100%; height:500px; margin-top: -20px;" frameborder="0"></iframe>
+	<iframe src="documentation/PDF/<?=$id?>.pdf" style="width:100%; height: 100%; margin-top: -20px; margin-bottom: -10px" frameborder="0"></iframe>
 	
 	<div class="audioclass">	
 		<audio src="assets/audio/<?=$id?>.mp3" controls>
