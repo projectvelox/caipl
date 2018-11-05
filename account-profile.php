@@ -27,7 +27,7 @@
 	  </ol>
 	</nav>
 
-	<div class="container mt-3 mh75vh" id="bad-background">		
+	<div class="container mt-3 mh75vh">		
 		<h2>Ang iyong profile, <?php echo $_SESSION['account']['firstname'] ?></h2>
 		<span>Kunin ang mga hitsura at pakiramdam ng iyong profile</span>
 		<div class="d-flex justify-content-end">
