@@ -26,16 +26,12 @@ $varLessonName = $row['lesson_name'];
 			<li class="breadcrumb-item active text-warning" aria-current="page"><?=$varLessonName?></li>
 		</ol>
 	</nav>
-	<div class="row" style="margin-top: -16px; margin-left: -15px; margin-right: 0px; margin-bottom: 0px;">
-		<div class="col-xs-12 col-md-8">
-			<iframe src="documentation/PDF/<?=$id?>.pdf" style="width:100%; height:500px" frameborder="0"></iframe>
-		</div>
-		<div class="col-xs-12 col-md-4" style="padding-top: 20px;">
-			<h4>Audio</h4><hr>
-			<audio src="assets/audio/<?=$id?>.mp3" controls>
+	<iframe src="documentation/PDF/<?=$id?>.pdf" style="width:100%; height:500px; margin-top: -20px;" frameborder="0"></iframe>
+	
+	<div class="audioclass">	
+		<audio src="assets/audio/<?=$id?>.mp3" controls>
 			  Sorry, your browser doesn't support HTML5 audio
-			</audio>
-		</div>
+		</audio>
 	</div>
 </body>
 </html>

@@ -75,3 +75,13 @@ html, body, .caipl-background {
 #editForm .form-group label {
 	font-weight: bold;
 }
+
+.audioclass {
+	text-align: center;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background-color: #0000008a;
+    padding: 10px;
+}
