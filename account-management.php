@@ -22,7 +22,7 @@
 	  </ol>
 	</nav>
 
-	<div class="container mt-3 mh75vh" id="bad-background">		
+	<div class="container mt-3 mh75vh">		
 		<h2>Account Management</h2>
 		<span>Get a view of all the accounts in the system. Create, edit, delete exisiting or non-existing records.</span>
 		<div class="d-flex justify-content-end">
