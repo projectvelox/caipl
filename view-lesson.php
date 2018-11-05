@@ -21,6 +21,7 @@ $varLessonName = $row['lesson_name'];
 
 	<nav aria-label="breadcrumb">
 		<ol class="breadcrumb bg-dark">
+			<li class="breadcrumb-item caipl-link"><a href="index.php">Home</a></li>
 			<li class="breadcrumb-item caipl-link"><a href="user-dashboard.php">User Dashboard</a></li>
 			<li class="breadcrumb-item caipl-link"><a href="take-lesson.php">Pumili ng mga aralin</a></li>
 			<li class="breadcrumb-item active text-warning" aria-current="page"><?=$varLessonName?></li>

@@ -13,6 +13,7 @@
 
   <nav aria-label="breadcrumb">
    <ol class="breadcrumb bg-dark">
+     <li class="breadcrumb-item caipl-link"><a href="index.php">Home</a></li>
      <li class="breadcrumb-item caipl-link"><a href="user-dashboard.php">User Dashboard</a></li>
      <li class="breadcrumb-item active text-warning" aria-current="page">Pumili ng mga Aralin</li>
    </ol>

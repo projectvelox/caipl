@@ -4,6 +4,11 @@
     <h5 class="my-0 mr-md-auto font-weight-normal"><a href="index.php">&nbsp Capiz State University</a><br> &nbsp Computer Aided Instruction for Philippine Literature</h5>
     <nav class="my-2 my-md-0 mr-md-3">
         <?PHP if(isset($_SESSION['account'])): ?>
+            <?PHP if($_SESSION['account']['typeofaccount'] == '1'): ?>
+                <a class="p-2 text-dark" href="user-dashboard.php">User Dashboard</a>
+            <?PHP else: ?>
+                 <a class="p-2 text-dark" href="admin-dashboard.php">Admin Dashboard</a>
+            <?PHP endif; ?>
             <a class="p-2 text-dark" href="logout.php">Logout</a>
         <?PHP else: ?>
             <a class="p-2 text-dark" href="login.php">Login</a>
