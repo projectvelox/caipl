@@ -15,12 +15,12 @@
 	  <ol class="breadcrumb bg-dark">
       <li class="breadcrumb-item caipl-link"><a href="index.php"><i class="material-icons">home</i></a></li>
 	    <li class="breadcrumb-item caipl-link"><a href="admin-dashboard.php">Admin Dashboard</a></li>
-	    <li class="breadcrumb-item active text-warning" aria-current="page">Talaan ng nilalaman</li>
+	    <li class="breadcrumb-item active text-warning" aria-current="page">Listahan ng mga Aralin</li>
 	  </ol>
 	</nav>
   
   <div class="container mt-5 mh60vh">
-    <h2>Listahan ng mga Aralin</h2>
+    <h2>Talaan ng nilalaman</h2>
     <p>Nasa ibaba ang listahan ng mga aralin</p><hr>
     <div class="row">
       <div class="col-xs-12 col-md-6">
@@ -91,7 +91,7 @@
             </a>
         </div>
       </div>
-    </div>
+    </div><hr>
   </div>
 </body>
 </html>
