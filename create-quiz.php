@@ -17,7 +17,7 @@
 	  </ol>
 	</nav>
 
-<div class="container mt-5 mh60vh" id="bad-background">
+<div class="container mt-5 mh60vh">
     <div class="row">
         <div class="col-xs-12 col-md-6">
 
@@ -91,6 +91,21 @@
 
             <p id="result"></p>
         </div>
+        <div class="col-xs-12 col-md-6">
+
+
+            <!-- Title -->
+            <h2>
+                <span>Create Quiz Questions</span>
+            </h2>
+
+            <!-- Subtitle -->
+            <p>Add questions to a quiz.</p>
+
+            <form id="QuestionForm">
+                
+            </form>
+        </div>
     </div>
 </div>
 
@@ -103,9 +118,9 @@
         $i=1;
         $j=$['numberofquestions'].val();
         $('#QuestionForm').append("<?php
-			while($i<=$j)
-			{
-				echo '<p>Question ' . $i . '</p>';
+            while($i<=$j)
+            {
+                echo '<p>Question ' . $i . '</p>';
                 echo '<div class="form-group"><textarea class="form-control" required="required" name="quizquestion"
                 placeholder="Enter the question"></textarea></div>';
                 echo '<div class="form-group"><input type="text" class="form-control" required="required" name="option1"
@@ -122,10 +137,10 @@
                 echo '<option value="2">Option 2</option>';
                 echo '<option value="3">Option 3</option>';
                 echo '<option value="4">Option 4</option></select></div>';
-				$i++;
+                $i++;
             }
             echo '<button type="submit" class="btn btn-dark">Add questions</button>';
-		?>");
+        ?>");
     });
 
     $(document).ready(function () {
