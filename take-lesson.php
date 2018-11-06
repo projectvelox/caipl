@@ -100,5 +100,3 @@
 </div>
 </body>
 </html>
-
-<iframe width="100%" height="768px" src="https://web.powerapps.com/webplayer/iframeapp?source=iframe&screenColor=rgba(104,101,171,1)&appId=/providers/Microsoft.PowerApps/apps/4bab45ac-523f-44e3-9e6b-b5402b198bb5" />

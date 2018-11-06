@@ -18,15 +18,15 @@
 	  <ol class="breadcrumb bg-dark">
 	  	<li class="breadcrumb-item caipl-link"><a href="index.php"><i class="material-icons">home</i></a></li>
 	    <li class="breadcrumb-item caipl-link"><a href="admin-dashboard.php">Admin Dashboard</a></li>
-	    <li class="breadcrumb-item active text-warning" aria-current="page">Account Management</li>
+	    <li class="breadcrumb-item active text-warning" aria-current="page">Pamamahala ng Account</li>
 	  </ol>
 	</nav>
 
 	<div class="container mt-3 mh75vh">		
-		<h2>Account Management</h2>
-		<span>Get a view of all the accounts in the system. Create, edit, delete exisiting or non-existing records.</span>
+		<h2>Pamamahala ng Account</h2>
+		<span>Tingnan ang lahat ng mga account sa system. Lumikha, mag-edit, magtanggal ng exisiting o hindi umiiral na mga tala.</span>
 		<div class="d-flex justify-content-end">
-			<button type="button" class="btn btn-dark" id="create-account" data-toggle="modal" data-target="#modal-create-account">Create Account</button>
+			<button type="button" class="btn btn-dark" id="create-account" data-toggle="modal" data-target="#modal-create-account">Lumikha ng Account</button>
 		</div><hr>
 		<?php include "view/partials/table-accounts.php"?>
 	</div>

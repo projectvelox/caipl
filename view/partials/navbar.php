@@ -11,6 +11,7 @@
             <?PHP endif; ?>
             <a class="p-2 text-dark" href="logout.php">Logout</a>
         <?PHP else: ?>
+            <a class="p-2 text-dark" href="non-user-lesson.php">Mga Aralin</a>
             <a class="p-2 text-dark" href="login.php">Login</a>
             <a class="p-2 text-dark" href="registration.php">Signup</a>
         <?PHP endif; ?>
