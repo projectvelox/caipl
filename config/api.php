@@ -124,7 +124,7 @@
             $sql = "INSERT INTO lesson(chapter_id, lesson_name, lesson_description) VALUES ('$chapterid', '$lessonname', '$lessondescription')";
             $result = mysqli_query($con,$sql);
 
-            if($result) echo json_encode(['message' => 'Successfully added lesson <b>'.$_POST['username'].'</b>']);
+            if($result) echo json_encode(['message' => 'Successfully added lesson']);
             else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
             break;
 
