@@ -105,6 +105,19 @@
             else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
             break;
 
+        case 'validate-account':
+            $username = $_POST['username'];
+
+            $sql = "UPDATE accounts
+                    SET status='2'
+                    WHERE username='$username'";
+            $result = mysqli_query($con,$sql);
+
+            if($result) echo json_encode(['message' => 'Successfully deleted the account <b>'.$_POST['username'].'</b>']);
+            else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
+            break;
+
+
         case 'create-chapter':
             $chaptername = $_POST['chaptername'];
             $chapterdescription = $_POST['chapterdescription'];

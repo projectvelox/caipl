@@ -13,12 +13,10 @@
 
 
 -- Dumping database structure for caipl
-DROP DATABASE IF EXISTS `caipl`;
 CREATE DATABASE IF NOT EXISTS `caipl` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `caipl`;
 
 -- Dumping structure for table caipl.accounts
-DROP TABLE IF EXISTS `accounts`;
 CREATE TABLE IF NOT EXISTS `accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `idnumber` varchar(20) DEFAULT NULL,
@@ -28,24 +26,24 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `middlename` varchar(150) DEFAULT NULL,
   `lastname` varchar(150) DEFAULT NULL,
   `typeofaccount` int(11) DEFAULT NULL,
+  `status` int(11) DEFAULT '1',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 -- Dumping data for table caipl.accounts: ~7 rows (approximately)
 DELETE FROM `accounts`;
 /*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
-INSERT INTO `accounts` (`id`, `idnumber`, `username`, `password`, `firstname`, `middlename`, `lastname`, `typeofaccount`) VALUES
-	(1, '13-0710-80', 'admin', 'admin', 'Joshua', 'Ricarder', 'Oducado', 2),
-	(2, '13-0710-11', 'user', 'user', 'Sumin', 'Bae', 'Jo', 1),
-	(3, '13-0710-80', 'ProjectVelox', 'manok098', 'Joshua', 'Ricarder', 'Oducado', 1),
-	(4, '13-0710-84', 'Featherxxx', 'manok098', 'Chrystal', 'Oducado', 'Alquisada', 1),
-	(5, '13-0718-90', 'Mojacko', 'manok098', 'Feather', 'Alquisada', 'Oducado', 1),
-	(6, '12-0918-30', 'SuminJo', 'sumninjo', 'Sumin', 'the', 'Hoe', 1),
-	(7, '13-0291-20', 'BenjiBoi', 'manok098', 'Benjamin', 'Louis', 'Mayor', 1);
+INSERT INTO `accounts` (`id`, `idnumber`, `username`, `password`, `firstname`, `middlename`, `lastname`, `typeofaccount`, `status`) VALUES
+	(1, '13-0710-80', 'admin', 'admin', 'Joshua', 'Ricarder', 'Oducado', 2, 2),
+	(2, '13-0710-11', 'user', 'user', 'Sumin', 'Bae', 'Jo', 1, 2),
+	(3, '13-0710-80', 'ProjectVelox', 'manok098', 'Joshua', 'Ricarder', 'Oducado', 1, 1),
+	(4, '13-0710-84', 'Featherxxx', 'manok098', 'Chrystal', 'Oducado', 'Alquisada', 1, 2),
+	(5, '13-0718-90', 'Mojacko', 'manok098', 'Feather', 'Alquisada', 'Oducado', 1, 1),
+	(6, '12-0918-30', 'SuminJo', 'sumninjo', 'Sumin', 'the', 'Hoe', 1, 2),
+	(7, '13-0291-20', 'BenjiBoi', 'manok098', 'Benjamin', 'Louis', 'Mayor', 1, 1);
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 
 -- Dumping structure for view caipl.account_listing
-DROP VIEW IF EXISTS `account_listing`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `account_listing` (
 	`id` INT(11) NOT NULL,
@@ -56,11 +54,11 @@ CREATE TABLE `account_listing` (
 	`middlename` VARCHAR(150) NULL COLLATE 'latin1_swedish_ci',
 	`lastname` VARCHAR(150) NULL COLLATE 'latin1_swedish_ci',
 	`typeofaccount` INT(11) NULL,
+	`status` INT(11) NULL,
 	`account_type` VARCHAR(50) NULL COLLATE 'latin1_swedish_ci'
 ) ENGINE=MyISAM;
 
 -- Dumping structure for table caipl.account_type
-DROP TABLE IF EXISTS `account_type`;
 CREATE TABLE IF NOT EXISTS `account_type` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `account_type` varchar(50) DEFAULT NULL,
@@ -76,7 +74,6 @@ INSERT INTO `account_type` (`id`, `account_type`) VALUES
 /*!40000 ALTER TABLE `account_type` ENABLE KEYS */;
 
 -- Dumping structure for table caipl.chapter
-DROP TABLE IF EXISTS `chapter`;
 CREATE TABLE IF NOT EXISTS `chapter` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `chapter_name` varchar(200) DEFAULT NULL,
@@ -103,7 +100,6 @@ INSERT INTO `chapter` (`id`, `chapter_name`, `chapter_description`) VALUES
 /*!40000 ALTER TABLE `chapter` ENABLE KEYS */;
 
 -- Dumping structure for view caipl.chapterandlessons_listing
-DROP VIEW IF EXISTS `chapterandlessons_listing`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `chapterandlessons_listing` (
 	`chapter_and_lesson` TEXT NULL COLLATE 'latin1_swedish_ci',
@@ -114,7 +110,6 @@ CREATE TABLE `chapterandlessons_listing` (
 ) ENGINE=MyISAM;
 
 -- Dumping structure for table caipl.lesson
-DROP TABLE IF EXISTS `lesson`;
 CREATE TABLE IF NOT EXISTS `lesson` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `chapter_id` int(11) NOT NULL,
@@ -122,9 +117,9 @@ CREATE TABLE IF NOT EXISTS `lesson` (
   `lesson_description` varchar(10000) NOT NULL,
   `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
--- Dumping data for table caipl.lesson: ~12 rows (approximately)
+-- Dumping data for table caipl.lesson: ~14 rows (approximately)
 DELETE FROM `lesson`;
 /*!40000 ALTER TABLE `lesson` DISABLE KEYS */;
 INSERT INTO `lesson` (`id`, `chapter_id`, `lesson_name`, `lesson_description`, `status`) VALUES
@@ -139,11 +134,12 @@ INSERT INTO `lesson` (`id`, `chapter_id`, `lesson_name`, `lesson_description`, `
 	(9, 9, 'Ang Aralin', 'Maraming pakahulugan ang iba’t ibang manunulat tumgkol sa panitikan. May nag sasabing “Ang tunay na kahulugan daw ng panitikan ay yaong pag papahayag ng damdamin, panaginip, at karanasan ng sangkatauhan nasusulat sa maganda, makahulugan, at manising na mga pahayag’’ . Sa aklat nina Atienza, Ramos, Zalazar, at Nazal na pinamagatang “Panitikang Pilipino, ipinahahayag na “ang tunay na panitikan ay yaong walang kamatayan’ yaong nagpapahayag ng damdamin ng tao bilang ganti niya sareaksyon sa kanyang pang araw-araw na pagsusumikap upang mabuhay at lumigaya sa kanyang kapaligiran ay gayun din sa kanyang pasusumikap na Makita ang Maykapal.\r\n	Si bro. Azarias ay nag sabing “ang panitikan ay ang pagpapahayag ng damdamin ng tao, sa lipunan, sa pamahalaan, sa kapaligiran, sa kapwa, at sa Dakilang Lumikha”. Ang pagpapahayag dawn g damdamin ng isang nilikha ay maaring sa pamamagitan ng pag ibig, kalungkutan, kaligayahan, galit o poot, pagkahabag, pag alipusta, paghihiganti at iba pa.	\r\n	Ayon naman sa Webster, sa kaniyang pinakabuod na kahulugan, “anu mang bagay raw naisasatitik, basta may kaugnayan sa pag iisip at damdamin ng tao, maging ito ay totoo, kathang isip o bungang tulog lamang ay maaaring tawaging panitikan”.\r\n	Ganito naman ang makabayanihang pakahulugan ni Maria Ramon sa panitikan. Ayon sa kanya “Ang panitikan ay kasaysayan ng kaluluwa ng mga mamamayan. Sa panitikan  nasasalamin ang mga layunin, damdamin, panaginip, pag-asa, hinaing at guni guni ng mga mamamayan na nasusulat o binabanggit sa sa maganda,makulay, makahulugan, matalinhaga, at masining na mga pahayag”.Ang panitikan ay nag bubunsod sa pagkilos ng mga mamamayan sa kanyang pagkamakabayan o nasyonalismo. Ito ang lakas na nagbubuklod ng kanilang damdamin, nagdidilat ng mga kanilang mata sa katwiran at katarungan.\r\n	Ang panitikan ay indi lamang lumilinang ng nasyonalismo kundi ito ay nag iingat din ng mga karanasan, tradisyon at mga mithiin ng bawat bansa. Hinuhubog sa panitikan ang kagandahan ng kultura ng bawat lipunan. Dito nasusulat ang henyo ng bawat panahon. Ito’y walang paglipas hanggang may tao sa sandaigdigan. Ang panitikan ay isang ilaw ng walang kamatayang tumatanglaw sa kabihasnan ng tao.\r\n', NULL),
 	(10, 10, 'Ang Aralin', 'Maraming pakahulugan ang iba’t ibang manunulat tumgkol sa panitikan. May nag sasabing “Ang tunay na kahulugan daw ng panitikan ay yaong pag papahayag ng damdamin, panaginip, at karanasan ng sangkatauhan nasusulat sa maganda, makahulugan, at manising na mga pahayag’’ . Sa aklat nina Atienza, Ramos, Zalazar, at Nazal na pinamagatang “Panitikang Pilipino, ipinahahayag na “ang tunay na panitikan ay yaong walang kamatayan’ yaong nagpapahayag ng damdamin ng tao bilang ganti niya sareaksyon sa kanyang pang araw-araw na pagsusumikap upang mabuhay at lumigaya sa kanyang kapaligiran ay gayun din sa kanyang pasusumikap na Makita ang Maykapal.\r\n	Si bro. Azarias ay nag sabing “ang panitikan ay ang pagpapahayag ng damdamin ng tao, sa lipunan, sa pamahalaan, sa kapaligiran, sa kapwa, at sa Dakilang Lumikha”. Ang pagpapahayag dawn g damdamin ng isang nilikha ay maaring sa pamamagitan ng pag ibig, kalungkutan, kaligayahan, galit o poot, pagkahabag, pag alipusta, paghihiganti at iba pa.	\r\n	Ayon naman sa Webster, sa kaniyang pinakabuod na kahulugan, “anu mang bagay raw naisasatitik, basta may kaugnayan sa pag iisip at damdamin ng tao, maging ito ay totoo, kathang isip o bungang tulog lamang ay maaaring tawaging panitikan”.\r\n	Ganito naman ang makabayanihang pakahulugan ni Maria Ramon sa panitikan. Ayon sa kanya “Ang panitikan ay kasaysayan ng kaluluwa ng mga mamamayan. Sa panitikan  nasasalamin ang mga layunin, damdamin, panaginip, pag-asa, hinaing at guni guni ng mga mamamayan na nasusulat o binabanggit sa sa maganda,makulay, makahulugan, matalinhaga, at masining na mga pahayag”.Ang panitikan ay nag bubunsod sa pagkilos ng mga mamamayan sa kanyang pagkamakabayan o nasyonalismo. Ito ang lakas na nagbubuklod ng kanilang damdamin, nagdidilat ng mga kanilang mata sa katwiran at katarungan.\r\n	Ang panitikan ay indi lamang lumilinang ng nasyonalismo kundi ito ay nag iingat din ng mga karanasan, tradisyon at mga mithiin ng bawat bansa. Hinuhubog sa panitikan ang kagandahan ng kultura ng bawat lipunan. Dito nasusulat ang henyo ng bawat panahon. Ito’y walang paglipas hanggang may tao sa sandaigdigan. Ang panitikan ay isang ilaw ng walang kamatayang tumatanglaw sa kabihasnan ng tao.\r\n', NULL),
 	(11, 11, 'Ang Aralin', 'Maraming pakahulugan ang iba’t ibang manunulat tumgkol sa panitikan. May nag sasabing “Ang tunay na kahulugan daw ng panitikan ay yaong pag papahayag ng damdamin, panaginip, at karanasan ng sangkatauhan nasusulat sa maganda, makahulugan, at manising na mga pahayag’’ . Sa aklat nina Atienza, Ramos, Zalazar, at Nazal na pinamagatang “Panitikang Pilipino, ipinahahayag na “ang tunay na panitikan ay yaong walang kamatayan’ yaong nagpapahayag ng damdamin ng tao bilang ganti niya sareaksyon sa kanyang pang araw-araw na pagsusumikap upang mabuhay at lumigaya sa kanyang kapaligiran ay gayun din sa kanyang pasusumikap na Makita ang Maykapal.\r\n	Si bro. Azarias ay nag sabing “ang panitikan ay ang pagpapahayag ng damdamin ng tao, sa lipunan, sa pamahalaan, sa kapaligiran, sa kapwa, at sa Dakilang Lumikha”. Ang pagpapahayag dawn g damdamin ng isang nilikha ay maaring sa pamamagitan ng pag ibig, kalungkutan, kaligayahan, galit o poot, pagkahabag, pag alipusta, paghihiganti at iba pa.	\r\n	Ayon naman sa Webster, sa kaniyang pinakabuod na kahulugan, “anu mang bagay raw naisasatitik, basta may kaugnayan sa pag iisip at damdamin ng tao, maging ito ay totoo, kathang isip o bungang tulog lamang ay maaaring tawaging panitikan”.\r\n	Ganito naman ang makabayanihang pakahulugan ni Maria Ramon sa panitikan. Ayon sa kanya “Ang panitikan ay kasaysayan ng kaluluwa ng mga mamamayan. Sa panitikan  nasasalamin ang mga layunin, damdamin, panaginip, pag-asa, hinaing at guni guni ng mga mamamayan na nasusulat o binabanggit sa sa maganda,makulay, makahulugan, matalinhaga, at masining na mga pahayag”.Ang panitikan ay nag bubunsod sa pagkilos ng mga mamamayan sa kanyang pagkamakabayan o nasyonalismo. Ito ang lakas na nagbubuklod ng kanilang damdamin, nagdidilat ng mga kanilang mata sa katwiran at katarungan.\r\n	Ang panitikan ay indi lamang lumilinang ng nasyonalismo kundi ito ay nag iingat din ng mga karanasan, tradisyon at mga mithiin ng bawat bansa. Hinuhubog sa panitikan ang kagandahan ng kultura ng bawat lipunan. Dito nasusulat ang henyo ng bawat panahon. Ito’y walang paglipas hanggang may tao sa sandaigdigan. Ang panitikan ay isang ilaw ng walang kamatayang tumatanglaw sa kabihasnan ng tao.\r\n', NULL),
-	(12, 12, 'Ang Aralin', 'Maraming pakahulugan ang iba’t ibang manunulat tumgkol sa panitikan. May nag sasabing “Ang tunay na kahulugan daw ng panitikan ay yaong pag papahayag ng damdamin, panaginip, at karanasan ng sangkatauhan nasusulat sa maganda, makahulugan, at manising na mga pahayag’’ . Sa aklat nina Atienza, Ramos, Zalazar, at Nazal na pinamagatang “Panitikang Pilipino, ipinahahayag na “ang tunay na panitikan ay yaong walang kamatayan’ yaong nagpapahayag ng damdamin ng tao bilang ganti niya sareaksyon sa kanyang pang araw-araw na pagsusumikap upang mabuhay at lumigaya sa kanyang kapaligiran ay gayun din sa kanyang pasusumikap na Makita ang Maykapal.\r\n	Si bro. Azarias ay nag sabing “ang panitikan ay ang pagpapahayag ng damdamin ng tao, sa lipunan, sa pamahalaan, sa kapaligiran, sa kapwa, at sa Dakilang Lumikha”. Ang pagpapahayag dawn g damdamin ng isang nilikha ay maaring sa pamamagitan ng pag ibig, kalungkutan, kaligayahan, galit o poot, pagkahabag, pag alipusta, paghihiganti at iba pa.	\r\n	Ayon naman sa Webster, sa kaniyang pinakabuod na kahulugan, “anu mang bagay raw naisasatitik, basta may kaugnayan sa pag iisip at damdamin ng tao, maging ito ay totoo, kathang isip o bungang tulog lamang ay maaaring tawaging panitikan”.\r\n	Ganito naman ang makabayanihang pakahulugan ni Maria Ramon sa panitikan. Ayon sa kanya “Ang panitikan ay kasaysayan ng kaluluwa ng mga mamamayan. Sa panitikan  nasasalamin ang mga layunin, damdamin, panaginip, pag-asa, hinaing at guni guni ng mga mamamayan na nasusulat o binabanggit sa sa maganda,makulay, makahulugan, matalinhaga, at masining na mga pahayag”.Ang panitikan ay nag bubunsod sa pagkilos ng mga mamamayan sa kanyang pagkamakabayan o nasyonalismo. Ito ang lakas na nagbubuklod ng kanilang damdamin, nagdidilat ng mga kanilang mata sa katwiran at katarungan.\r\n	Ang panitikan ay indi lamang lumilinang ng nasyonalismo kundi ito ay nag iingat din ng mga karanasan, tradisyon at mga mithiin ng bawat bansa. Hinuhubog sa panitikan ang kagandahan ng kultura ng bawat lipunan. Dito nasusulat ang henyo ng bawat panahon. Ito’y walang paglipas hanggang may tao sa sandaigdigan. Ang panitikan ay isang ilaw ng walang kamatayang tumatanglaw sa kabihasnan ng tao.\r\n', NULL);
+	(12, 12, 'Ang Aralin', 'Maraming pakahulugan ang iba’t ibang manunulat tumgkol sa panitikan. May nag sasabing “Ang tunay na kahulugan daw ng panitikan ay yaong pag papahayag ng damdamin, panaginip, at karanasan ng sangkatauhan nasusulat sa maganda, makahulugan, at manising na mga pahayag’’ . Sa aklat nina Atienza, Ramos, Zalazar, at Nazal na pinamagatang “Panitikang Pilipino, ipinahahayag na “ang tunay na panitikan ay yaong walang kamatayan’ yaong nagpapahayag ng damdamin ng tao bilang ganti niya sareaksyon sa kanyang pang araw-araw na pagsusumikap upang mabuhay at lumigaya sa kanyang kapaligiran ay gayun din sa kanyang pasusumikap na Makita ang Maykapal.\r\n	Si bro. Azarias ay nag sabing “ang panitikan ay ang pagpapahayag ng damdamin ng tao, sa lipunan, sa pamahalaan, sa kapaligiran, sa kapwa, at sa Dakilang Lumikha”. Ang pagpapahayag dawn g damdamin ng isang nilikha ay maaring sa pamamagitan ng pag ibig, kalungkutan, kaligayahan, galit o poot, pagkahabag, pag alipusta, paghihiganti at iba pa.	\r\n	Ayon naman sa Webster, sa kaniyang pinakabuod na kahulugan, “anu mang bagay raw naisasatitik, basta may kaugnayan sa pag iisip at damdamin ng tao, maging ito ay totoo, kathang isip o bungang tulog lamang ay maaaring tawaging panitikan”.\r\n	Ganito naman ang makabayanihang pakahulugan ni Maria Ramon sa panitikan. Ayon sa kanya “Ang panitikan ay kasaysayan ng kaluluwa ng mga mamamayan. Sa panitikan  nasasalamin ang mga layunin, damdamin, panaginip, pag-asa, hinaing at guni guni ng mga mamamayan na nasusulat o binabanggit sa sa maganda,makulay, makahulugan, matalinhaga, at masining na mga pahayag”.Ang panitikan ay nag bubunsod sa pagkilos ng mga mamamayan sa kanyang pagkamakabayan o nasyonalismo. Ito ang lakas na nagbubuklod ng kanilang damdamin, nagdidilat ng mga kanilang mata sa katwiran at katarungan.\r\n	Ang panitikan ay indi lamang lumilinang ng nasyonalismo kundi ito ay nag iingat din ng mga karanasan, tradisyon at mga mithiin ng bawat bansa. Hinuhubog sa panitikan ang kagandahan ng kultura ng bawat lipunan. Dito nasusulat ang henyo ng bawat panahon. Ito’y walang paglipas hanggang may tao sa sandaigdigan. Ang panitikan ay isang ilaw ng walang kamatayang tumatanglaw sa kabihasnan ng tao.\r\n', NULL),
+	(13, 2, '12', '12', NULL),
+	(14, 3, '12', '12', NULL);
 /*!40000 ALTER TABLE `lesson` ENABLE KEYS */;
 
 -- Dumping structure for table caipl.quiz
-DROP TABLE IF EXISTS `quiz`;
 CREATE TABLE IF NOT EXISTS `quiz` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `lesson_id` int(11) NOT NULL,
@@ -185,7 +181,6 @@ INSERT INTO `quiz` (`id`, `lesson_id`, `quiz_question`, `option_1`, `option_2`, 
 /*!40000 ALTER TABLE `quiz` ENABLE KEYS */;
 
 -- Dumping structure for table caipl.quizzes
-DROP TABLE IF EXISTS `quizzes`;
 CREATE TABLE IF NOT EXISTS `quizzes` (
   `id` int(255) NOT NULL,
   `que` text NOT NULL,
@@ -209,7 +204,6 @@ INSERT INTO `quizzes` (`id`, `que`, `option 1`, `option 2`, `option 3`, `option 
 /*!40000 ALTER TABLE `quizzes` ENABLE KEYS */;
 
 -- Dumping structure for view caipl.quiz_listing
-DROP VIEW IF EXISTS `quiz_listing`;
 -- Creating temporary table to overcome VIEW dependency errors
 CREATE TABLE `quiz_listing` (
 	`chapter_name` VARCHAR(200) NULL COLLATE 'latin1_swedish_ci',
@@ -223,7 +217,6 @@ CREATE TABLE `quiz_listing` (
 ) ENGINE=MyISAM;
 
 -- Dumping structure for table caipl.scores
-DROP TABLE IF EXISTS `scores`;
 CREATE TABLE IF NOT EXISTS `scores` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `dateofexam` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -231,9 +224,9 @@ CREATE TABLE IF NOT EXISTS `scores` (
   `quiz_id` varchar(50) DEFAULT NULL,
   `score` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
--- Dumping data for table caipl.scores: ~5 rows (approximately)
+-- Dumping data for table caipl.scores: ~7 rows (approximately)
 DELETE FROM `scores`;
 /*!40000 ALTER TABLE `scores` DISABLE KEYS */;
 INSERT INTO `scores` (`id`, `dateofexam`, `student`, `quiz_id`, `score`) VALUES
@@ -241,22 +234,22 @@ INSERT INTO `scores` (`id`, `dateofexam`, `student`, `quiz_id`, `score`) VALUES
 	(3, '2018-10-30 22:56:12', 'Sumin Bae Jo', '2', '0/3'),
 	(4, '2018-10-30 22:56:29', 'Sumin Bae Jo', '2', '0/3'),
 	(5, '2018-10-30 22:56:57', 'Sumin Bae Jo', '2', '0/3'),
-	(6, '2018-10-30 22:57:56', 'Sumin Bae Jo', '6', '0/1');
+	(6, '2018-10-30 22:57:56', 'Sumin Bae Jo', '6', '0/1'),
+	(7, '2018-11-06 08:07:57', 'Sumin Bae Jo', '4', '0/1'),
+	(8, '2018-11-06 08:11:05', 'Sumin Bae Jo', '2', '0/3');
 /*!40000 ALTER TABLE `scores` ENABLE KEYS */;
 
 -- Dumping structure for view caipl.account_listing
-DROP VIEW IF EXISTS `account_listing`;
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `account_listing`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `account_listing` AS SELECT 
 	accounts.*, 
-	account_type.account_type
+	account_type.account_type 
 FROM accounts
 INNER JOIN account_type 
 ON accounts.typeofaccount = account_type.id ;
 
 -- Dumping structure for view caipl.chapterandlessons_listing
-DROP VIEW IF EXISTS `chapterandlessons_listing`;
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `chapterandlessons_listing`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `chapterandlessons_listing` AS SELECT 
@@ -270,7 +263,6 @@ INNER JOIN lesson
 ON chapter.id = lesson.chapter_id ;
 
 -- Dumping structure for view caipl.quiz_listing
-DROP VIEW IF EXISTS `quiz_listing`;
 -- Removing temporary table and create final VIEW structure
 DROP TABLE IF EXISTS `quiz_listing`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `quiz_listing` AS SELECT 

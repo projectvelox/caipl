@@ -80,6 +80,36 @@
 				 	});
 			});
 
+			$(document).on("click", "#validateProfile", function() { 
+				var username = $(this).data('username');
+
+				appDialog.confirm('Are you sure?', 'Are you sure you want to validate this account?',
+				 	function (yes) {
+				 		if(yes) {
+				 			var preloader = new appDialog.preloader('Validating');
+		                    $.ajax({
+		                        type: 'POST',
+		                        url: 'config/api.php',
+		                        data: {
+		                        	username: username,
+		                        	action: "validate-account"
+		                        }
+		                    }).then(function(data) {
+		                        if(data.error) appDialog.alert('Validation Error: ' + data.error[0], data.error[1]);
+		                        else appDialog.alert('Validation Success', data.message, 
+		                        	function(OK) { RefreshTable() }
+		                        );
+
+		                    }).catch(function (error) {
+		                        appDialog.alert('Validation Error', error.statusText || 'Server Error');
+		                    }).always(function () {
+		                        preloader.destroy();
+		                    });
+					 	}
+				 	});
+			});
+
+
 			$(".typeofaccount").change(function() {
 	            var type = $('.typeofaccount').find(":selected").val();
 	            if(type=="2"){

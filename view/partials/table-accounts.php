@@ -29,6 +29,16 @@
 					<button class='btn btn-dark text-white caipl-btn' data-toggle='modal' data-target='#modal-edit-account' id='editProfileModal' data-username='".$row['username']."'' data-firstname='".$row['firstname']."' data-middlename='".$row['middlename']."' data-lastname='".$row['lastname']."' data-password='".$row['password']."'>
 						<i class='material-icons'>edit</i>
 					</button>
+				";
+
+				if($row['status'] == '1') { 
+					echo "	
+					<button class='btn btn-success text-white caipl-btn' id='validateProfile' data-username='".$row['username']."'>
+						<i class='material-icons'>check</i>
+					</button>";
+				}
+				
+				echo "	
 					<button class='btn btn-danger text-white caipl-btn' id='deleteProfile' data-username='".$row['username']."'>
 						<i class='material-icons'>delete</i>
 					</button>
