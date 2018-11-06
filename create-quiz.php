@@ -13,7 +13,7 @@
 	  <ol class="breadcrumb bg-dark">
         <li class="breadcrumb-item caipl-link"><a href="index.php"><i class="material-icons">home</i></a></li>
 	    <li class="breadcrumb-item caipl-link"><a href="admin-dashboard.php">Admin Dashboard</a></li>
-	    <li class="breadcrumb-item active text-warning" aria-current="page">Create Quizzes</li>
+	    <li class="breadcrumb-item active text-warning" aria-current="page">Lumikha ng Pagsusulit</li>
 	  </ol>
 	</nav>
 
@@ -23,11 +23,8 @@
 
             <!-- Title -->
             <h2>
-                <span>Create Quiz</span>
+                <span>Lumikha ng Pagsusulit</span>
             </h2>
-
-            <!-- Subtitle -->
-            <p>Add a quiz to a lesson.</p>
 
             <!-- Quiz Form -->
             <form id="QuizForm">
@@ -36,7 +33,7 @@
                     <select class="form-control"
                             required="required"
                             name="chaptername">
-                        <option selected disabled>Select the chapter</option>
+                        <option selected disabled>Piliin ang kabanata</option>
                         <?php
                             $i=0;
                             $con = mysqli_connect("localhost","root","","caipl");
@@ -58,7 +55,7 @@
                     <select class="form-control"
                             required="required"
                             name="lessonname">
-                        <option selected disabled>Select the lesson</option>
+                        <option selected disabled>Piliin ang aralin</option>
                         <?php
                             $i=0;
                             $con = mysqli_connect("localhost","root","","caipl");
@@ -80,11 +77,11 @@
                     <input type="number"
                            class="form-control"
                            name="numberofquestions"
-                           placeholder="Number of questions">
+                           placeholder="Bilang ng mga tanong">
                 </div>
 
                 <!-- Submit -->
-                <button type="button" class="btn btn-dark">Add quiz</button>
+                <button type="button" class="btn btn-dark">Magdagdag ng pagsusulit</button>
             </form>
 
 
@@ -96,11 +93,8 @@
 
             <!-- Title -->
             <h2>
-                <span>Create Quiz Questions</span>
+                <span>Gumawa ng mga Tanong sa Pagsusulit</span>
             </h2>
-
-            <!-- Subtitle -->
-            <p>Add questions to a quiz.</p>
 
             <form id="QuestionForm">
                 
