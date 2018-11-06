@@ -20,7 +20,7 @@
       <div class="col-xs-6 col-md-2 caipl-dashboard-icons">
         <a href="take-lesson.php" class="text-dark">
           <img src="assets/images/icons/lesson-view.png">
-          <h4>Mga Aral</h4>
+          <h4>Mga Aralin</h4>
         </a>
       </div>
       <div class="col-xs-6 col-md-2 caipl-dashboard-icons">

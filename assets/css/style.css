@@ -4,7 +4,7 @@ html, body, .caipl-background {
 
 body {
 	background: url(../images/bof-building.jpg);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
 	background-size: cover;
 	background-position: center;
 	background-blend-mode: lighten;

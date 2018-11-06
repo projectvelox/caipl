@@ -4,7 +4,7 @@
 <!-- Head -->
 <?php include 'view/partials/header.php'?>
 
-<body style="background: none">
+<body>
 	<!-- Navbar -->
 	<?php include 'view/partials/navbar.php'?>			
 

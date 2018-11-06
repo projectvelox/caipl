@@ -90,15 +90,15 @@
         </div>
         <div class="col-xs-12 col-md-6">
 
-
-            <!-- Title -->
+           
+            <!-- Title --> <!--
             <h2>
                 <span>Gumawa ng mga Tanong sa Pagsusulit</span>
             </h2>
 
             <form id="QuestionForm">
                 
-            </form>
+            </form> -->
         </div>
     </div>
 </div>
