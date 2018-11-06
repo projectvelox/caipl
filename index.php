@@ -4,7 +4,7 @@
 <!-- Head -->
 <?php include 'view/partials/header.php'?>
 
-<body>
+<body id="bad-background" style="background-repeat: repeat;">
 	<!-- Navbar -->
 	<?php include 'view/partials/navbar.php'?>			
 

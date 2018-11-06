@@ -39,13 +39,21 @@
                 $account = mysqli_fetch_assoc($result);
                 if($account) {
                     if($account['password'] == $password) {
-                        $_SESSION['account'] = $account;
                         $redirect = '';
-                        switch ($account['typeofaccount']) {
-                            case '1': $redirect = 'user-dashboard.php'; break;
-                            case '2': $redirect = 'admin-dashboard.php'; break;
-                        }
-                        echo json_encode(['redirect' => $redirect]);
+                        switch ($account['status']) {
+                            case '1':
+                                echo json_encode(['error' => ['WRONG_USERNAME', 'Account not yet validated']]);
+                                break;
+                            case '2':
+                                switch ($account['typeofaccount']) {
+                                    case '1': $redirect = 'user-dashboard.php'; break;
+                                    case '2': $redirect = 'admin-dashboard.php'; break;
+                                }
+                                $_SESSION['account'] = $account;
+                                echo json_encode(['redirect' => $redirect]);
+                                break;
+                        } 
+                        
                     }
                     else {
                         echo json_encode(['error' => ['WRONG_PASSWORD', 'Wrong Password.']]);
