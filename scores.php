@@ -28,8 +28,8 @@
  </nav>
 
  <div class="container mt-5 mh75vh">
-  <h2>Your Score</h2><hr>
-  <h1 class="text-center mt-5">You've scored: <?=$_GET['score']?> on the quiz</h1>
+  <h2>Ang iyong iskor</h2><hr>
+  <h1 class="text-center mt-5">Ang iyong iskor sa pagsusulit ay <?=$_GET['score']?></h1>
 </div><br>
 </body>
 </html>
