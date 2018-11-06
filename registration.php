@@ -9,7 +9,7 @@
   include 'view/partials/navbar.php';
 ?>
 
-<div class="container mt-5 mh75vh" id="bad-background">
+<div class="container mt-5 mh75vh">
     <div class="row">
         <div class="col-xs-12 col-md-6">
 

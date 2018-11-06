@@ -17,7 +17,7 @@
 <!-- Head -->
 <?php include 'view/partials/header.php'?>
 
-<body>
+<body style="background: none;">
 
 <!-- Navbar -->
 <?php include 'view/partials/navbar.php'?>

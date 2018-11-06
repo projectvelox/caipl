@@ -2,6 +2,15 @@ html, body, .caipl-background {
     height: 100%;
 }
 
+body {
+	background: url(../images/bof-building.jpg);
+    background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-blend-mode: lighten;
+	background-color: #900e0ead;
+}
+
 .carousel-item img {
 	height: 460.8px;
 	width: 100%;

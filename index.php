@@ -14,7 +14,7 @@
 	<div class="text-center"><h1>Computer Aided Instruction for Philippine Literature</h1>
 	<!-- <p>Changing the standards of education and organizational training</p> -->
 	</div><br>
-	<div class="mh50vh" id="bad-background">
+	<div class="mh50vh">
 		<br>
 		<div class="container">
 			<div class="row">
