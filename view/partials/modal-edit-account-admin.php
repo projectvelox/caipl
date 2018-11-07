@@ -56,7 +56,7 @@
                        name="lastname">
             </div>
             
-            <button type="submit" class="btn btn-dark">Edit</button>
+            <button type="submit" class="btn btn-dark">Submit</button>
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </form>
       </div>      
