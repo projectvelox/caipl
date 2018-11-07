@@ -88,6 +88,7 @@
           data: data,
         }).then(function(data) {
           location.href = 'scores.php?score=' + data + '&id='+id
+          //console.log(data);
         });
     });
   });
