@@ -4,7 +4,7 @@
 <!-- Head -->
 <?php include 'view/partials/header.php'?>
 
-<body id="bad-background" style="background-repeat: repeat;">
+<body id="bad-background" style="background-repeat: repeat; font-family: serif !important;">
 	<!-- Navbar -->
 	<?php include 'view/partials/navbar.php'?>			
 
@@ -20,17 +20,17 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<h2 class="caipl-header text-dark">Mandate</h2>
-					<p>The Capiz State University (CAPSU) primarily provides advance instruction and professional training in agriculture, fishery and forestry, science and technology, arts and humanities, education and other related fields. It shall also undertake research, extension services and production activities and provide progressive leadership in its areas of specialization.</p>
+					<h5>The Capiz State University (CAPSU) primarily provides advance instruction and professional training in agriculture, fishery and forestry, science and technology, arts and humanities, education and other related fields. It shall also undertake research, extension services and production activities and provide progressive leadership in its areas of specialization.</h5>
 				</div>
 			</div><br>
 			<div class="row">
 				<div class="col-xs-12 col-md-6">
 					<h2 class="caipl-header text-dark">Vision</h2>
-					<p>Center of Academic Excellence Delivering Quality Service to all</p>
+					<h5>Center of Academic Excellence Delivering Quality Service to all</h5>
 				</div>	
 				<div class="col-xs-12 col-md-6">
 					<h2 class="caipl-header text-dark">Mission</h2>
-					<p>Capiz State University is committed to provide advance knowledge and innovation; develop skills, talents and values; undertake relevant research, development and extension services; promote entrepreneurship and environmental consciousness; and enhance industry collaboration and linkages with partner agencies.</p>
+					<h5>Capiz State University is committed to provide advance knowledge and innovation; develop skills, talents and values; undertake relevant research, development and extension services; promote entrepreneurship and environmental consciousness; and enhance industry collaboration and linkages with partner agencies.</h5>
 				</div>	
 			</div><br>
 			<div class="row">
