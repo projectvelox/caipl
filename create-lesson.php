@@ -28,7 +28,7 @@
             </h2>
 
             <!-- Lesson Form -->
-            <form id="LessonForm">
+            <form action="config/upload.php" id="LessonForm" enctype="multipart/form-data" method="post">
                 <!-- Chapter Name -->
                 <div class="form-group">
                     <select class="form-control"
@@ -67,6 +67,10 @@
                            required="required"
                            name="lessondescription"
                            placeholder="Ipasok ang paglalarawan ng aralin"></textarea>
+                </div>
+                <div class="form-group">
+                    Magpili ng aralin (PDF)
+                    <input type="file" name="fileToUpload" id="fileToUpload">
                 </div>
 
                 <!-- Submit -->
@@ -117,7 +121,7 @@
             });
         });
 
-        // Submit Lesson Form
+        /* // Submit Lesson Form
         $('#LessonForm').on('submit', function (e) {
             e.preventDefault();
             var serialized_array = $(this).serializeArray();
@@ -145,7 +149,7 @@
                     });
                 }
             });
-        });
+        }); */
     });
 </script>
 </body>

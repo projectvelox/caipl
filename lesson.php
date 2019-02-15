@@ -15,7 +15,7 @@
 	  <ol class="breadcrumb bg-dark">
       <li class="breadcrumb-item caipl-link"><a href="index.php"><i class="material-icons">home</i></a></li>
 	    <li class="breadcrumb-item caipl-link"><a href="admin-dashboard.php">Admin Dashboard</a></li>
-	    <li class="breadcrumb-item active text-warning" aria-current="page">Listahan ng mga Aralin</li>
+	    <li class="breadcrumb-item active text-warning" aria-current="page">Listahan ng mga Aralin</li> 
 	  </ol>
 	</nav>
   
@@ -39,7 +39,18 @@
             while($rows = mysqli_fetch_array($results))
             {
               $id = $rows['id'];
-              echo "<li><a href='view-lesson-admin.php?id=$id'>" . $rows['lesson_name'] . "</a></li>";
+              echo "<li style='line-height: 2.0'>
+                <a href='view-lesson-admin.php?id=$id'>" . $rows['lesson_name'] . "</a>
+                <div style='display: inline-block; float: right'>
+                    
+                    <button type='button' id='view-lesson' class='btn btn-sm btn-primary float-right' data-id='$id' style='border-radius: 0px'>View</button>
+                    
+                    <button type='button' id='edit-lesson' class='btn btn-sm btn-primary float-right' data-id='$id' style='border-radius: 0px'>Edit</button>
+                    
+                    <button type='button' id='delete-lesson' class='btn btn-sm btn-danger float-right' data-id='$id' style='border-radius: 0px'>Delete</button>
+                    
+                </div>
+                </li>";
             }
             echo "</ul>";
 
@@ -94,4 +105,50 @@
     </div><hr>
   </div>
 </body>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var Dialog = new BootstrapDialog({
+            buttonClass: 'btn-primary'
+        });
+
+        // Submit Chapter Form
+        $(document).on("click", "#view-lesson", function() { 
+          $id = $(this).data("id");
+          location.href = "view-lesson-admin.php?id=" + $id;
+        });
+
+        // Submit Chapter Form
+        $(document).on("click", "#edit-lesson", function() { 
+          $id = $(this).data("id");
+          location.href = "edit-lesson.php?id=" + $id;
+        });
+
+
+        $(document).on("click", "#delete-lesson", function() { 
+            $id = $(this).data("id");
+
+            Dialog.confirm('Are you sure?', 'Are you sure you want to delete this lesson?', function (yes) {
+                  if(yes) {
+                      var preloader = new Dialog.preloader('Deleting');
+                      $.ajax({
+                          type: 'POST',
+                          url: 'config/api.php',
+                          data: {
+                            id: $id,
+                            action: 'delete-lesson'
+                          }
+                      }).then(function(data) {
+                          if(data.error) Dialog.alert('Deletion of Lesson Error: ' + data.error[0], data.error[1]);
+                          else Dialog.alert('Successful Removed the Lesson', data.message,
+                            function(OK)  {location.reload(); });
+                      }).catch(function (error) {
+                          Dialog.alert('Deletion of Lesson Error: ', error.statusText || 'Server Error');
+                      }).always(function () {
+                          preloader.destroy();
+                      });
+                  }
+              });
+          });
+    });
+</script>
 </html>

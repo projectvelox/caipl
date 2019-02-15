@@ -127,6 +127,7 @@
 
 
         case 'create-chapter':
+
             $chaptername = $_POST['chaptername'];
             $chapterdescription = $_POST['chapterdescription'];
 
@@ -138,15 +139,16 @@
             break;
 
         case 'create-lesson':
+
             $chapterid = $_POST['lessonchaptername'];
             $lessonname = $_POST['lessonname'];
             $lessondescription = $_POST['lessondescription'];
 
             $sql = "INSERT INTO lesson(chapter_id, lesson_name, lesson_description) VALUES ('$chapterid', '$lessonname', '$lessondescription')";
-            $result = mysqli_query($con,$sql);
+            $result = mysqli_query($con,$sql); 
 
             if($result) echo json_encode(['message' => 'Successfully added lesson']);
-            else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
+            else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]); 
             break;
 
         case 'check-quiz':
@@ -161,6 +163,18 @@
             else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
             break;
         
+        case 'delete-lesson':
+            $id = $_POST['id'];
+
+            $sql = "DELETE FROM lesson WHERE id='$id'";;
+            
+            $result = mysqli_query($con,$sql);
+
+            if($result) echo json_encode(['message' => 'Successfully deleted from the list of lessons on our database.']);
+            else echo json_encode(['error' => ['DB_ERROR', mysqli_error($con)]]);
+            break;
+
+
         // Action Not Found
 
         default:
